@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OneTechgen - Clients & Contact</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #0a2463;
+        --secondary: #d4af37;
+        --accent: #3e92cc;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --success: #28a745;
+      }
+
+      body {
+        font-family: "Manrope", sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+      }
+
+      .section-padding {
+        padding: 80px 0;
+      }
+
+      .bg-light {
+        background-color: var(--light) !important;
+      }
+
+      .bg-primary {
+        background-color: var(--primary) !important;
+      }
+
+      .text-primary {
+        color: var(--primary) !important;
+      }
+
+      .text-secondary {
+        color: var(--secondary) !important;
+      }
+
+      .clients-section {
+        padding: 60px 0;
+        background-color: white;
+      }
+
+      .client-logo {
+        height: 80px;
+        width: auto;
+        margin: 20px;
+        opacity: 0.7;
+        transition: all 0.3s ease;
+        filter: grayscale(100%);
+      }
+
+      .client-logo:hover {
+        opacity: 1;
+        filter: grayscale(0%);
+        transform: scale(1.05);
+      }
+
+      .contact-hero {
+        background: linear-gradient(
+            rgba(10, 36, 99, 0.8),
+            rgba(10, 36, 99, 0.8)
+          ),
+          url("https://images.unsplash.com/photo-1516387938699-a93567ec168e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80")
+            no-repeat center center/cover;
+        padding: 120px 0;
+        color: white;
+      }
+
+      .contact-card {
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        height: 100%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .contact-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-icon {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 20px;
+      }
+
+      .form-control {
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid #e1e1e1;
+      }
+
+      .form-control:focus {
+        box-shadow: none;
+        border-color: var(--primary);
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--secondary);
+        border-color: var(--secondary);
+        color: var(--dark);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .map-container {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .faq-item {
+        border-bottom: 1px solid #eee;
+        padding: 20px 0;
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .social-icon:hover {
+        background: var(--secondary);
+        color: var(--dark);
+        transform: translateY(-3px);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Clients Logo Section -->
+    <section class="clients-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <h2>Trusted by Industry Leaders</h2>
+            <p class="lead">
+              We partner with innovative companies across various industries
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div
+              class="d-flex flex-wrap justify-content-center align-items-center"
+            >
+              <img
+                src="https://via.placeholder.com/200x80/0a2463/ffffff?text=TechCorp"
+                alt="TechCorp"
+                class="client-logo"
+              />
+              <img
+                src="https://via.placeholder.com/200x80/0a2463/ffffff?text=InnovateX"
+                alt="InnovateX"
+                class="client-logo"
+              />
+              <img
+                src="https://via.placeholder.com/200x80/0a2463/ffffff?text=DataSolutions"
+                alt="DataSolutions"
+                class="client-logo"
+              />
+              <img
+                src="https://via.placeholder.com/200x80/0a2463/ffffff?text=CloudWorks"
+                alt="CloudWorks"
+                class="client-logo"
+              />
+              <img
+                src="https://via.placeholder.com/200x80/0a2463/ffffff?text=SecureNet"
+                alt="SecureNet"
+                class="client-logo"
+              />
+              <img
+                src="https://via.placeholder.com/200x80/0a2463/ffffff?text=FutureTech"
+                alt="FutureTech"
+                class="client-logo"
+              />
+              <img
+                src="https://via.placeholder.com/200x80/0a2463/ffffff?text=DigitalPlus"
+                alt="DigitalPlus"
+                class="client-logo"
+              />
+              <img
+                src="https://via.placeholder.com/200x80/0a2463/ffffff?text=AppGenius"
+                alt="AppGenius"
+                class="client-logo"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Us Page -->
+    <div class="contact-page">
+      <!-- Hero Section -->
+      <section class="contact-hero">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+              <h1 class="display-4 fw-bold mb-4">Get In Touch With Us</h1>
+              <p class="lead mb-5">
+                We're here to answer your questions and discuss how our services
+                can help your business grow.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Methods Section -->
+      <section class="section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <h2>Contact Methods</h2>
+              <p class="lead">Choose your preferred way to connect with us</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="contact-card card h-100 border-0 text-center">
+                <div class="card-body p-4">
+                  <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                  </div>
+                  <h4 class="mb-3">Phone</h4>
+                  <p class="mb-2">Speak directly with our team</p>
+                  <h5 class="text-primary">+1 (555) 123-4567</h5>
+                  <p class="text-muted mt-3">Mon-Fri: 9AM-6PM EST</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="contact-card card h-100 border-0 text-center">
+                <div class="card-body p-4">
+                  <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <h4 class="mb-3">Email</h4>
+                  <p class="mb-2">Send us a message anytime</p>
+                  <h5 class="text-primary">info@onetechgen.com</h5>
+                  <p class="text-muted mt-3">We respond within 24 hours</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="contact-card card h-100 border-0 text-center">
+                <div class="card-body p-4">
+                  <div class="contact-icon">
+                    <i class="fas fa-comments"></i>
+                  </div>
+                  <h4 class="mb-3">Live Chat</h4>
+                  <p class="mb-2">Instant messaging support</p>
+                  <h5 class="text-primary">Start Chat</h5>
+                  <p class="text-muted mt-3">
+                    Available 24/7 for urgent inquiries
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Form Section -->
+      <section class="section-padding bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="card border-0 shadow">
+                <div class="card-body p-5">
+                  <div class="text-center mb-5">
+                    <h2>Send Us a Message</h2>
+                    <p class="lead">
+                      Fill out the form below and we'll get back to you shortly
+                    </p>
+                  </div>
+                  <form>
+                    <div class="row">
+                      <div class="col-md-6 mb-4">
+                        <label for="name" class="form-label">Full Name *</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="name"
+                          required
+                        />
+                      </div>
+                      <div class="col-md-6 mb-4">
+                        <label for="email" class="form-label"
+                          >Email Address *</label
+                        >
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="email"
+                          required
+                        />
+                      </div>
+                      <div class="col-md-6 mb-4">
+                        <label for="company" class="form-label"
+                          >Company Name</label
+                        >
+                        <input type="text" class="form-control" id="company" />
+                      </div>
+                      <div class="col-md-6 mb-4">
+                        <label for="phone" class="form-label"
+                          >Phone Number</label
+                        >
+                        <input type="tel" class="form-control" id="phone" />
+                      </div>
+                      <div class="col-12 mb-4">
+                        <label for="subject" class="form-label"
+                          >Subject *</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="subject"
+                          required
+                        />
+                      </div>
+                      <div class="col-12 mb-4">
+                        <label for="message" class="form-label"
+                          >Message *</label
+                        >
+                        <textarea
+                          class="form-control"
+                          id="message"
+                          rows="5"
+                          required
+                        ></textarea>
+                      </div>
+                      <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                          Send Message
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Office Locations Section -->
+      <section class="section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <h2>Our Offices</h2>
+              <p class="lead">Visit us at any of our global locations</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 mb-5">
+              <div class="card border-0 h-100">
+                <div class="card-body p-4">
+                  <h4 class="mb-4">New York Office</h4>
+                  <p class="mb-4">
+                    <i class="fas fa-map-marker-alt me-2 text-primary"></i> 123
+                    Tech Avenue, New York, NY 10001
+                  </p>
+                  <p class="mb-4">
+                    <i class="fas fa-phone me-2 text-primary"></i> +1 (212)
+                    555-7890
+                  </p>
+                  <p class="mb-4">
+                    <i class="fas fa-clock me-2 text-primary"></i> Mon-Fri:
+                    9AM-6PM EST
+                  </p>
+                  <div class="map-container">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.11976397304613!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1686771292993!5m2!1sen!2s"
+                      width="100%"
+                      height="250"
+                      style="border: 0"
+                      allowfullscreen=""
+                      loading="lazy"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 mb-5">
+              <div class="card border-0 h-100">
+                <div class="card-body p-4">
+                  <h4 class="mb-4">San Francisco Office</h4>
+                  <p class="mb-4">
+                    <i class="fas fa-map-marker-alt me-2 text-primary"></i> 456
+                    Innovation Drive, San Francisco, CA 94105
+                  </p>
+                  <p class="mb-4">
+                    <i class="fas fa-phone me-2 text-primary"></i> +1 (415)
+                    555-1234
+                  </p>
+                  <p class="mb-4">
+                    <i class="fas fa-clock me-2 text-primary"></i> Mon-Fri:
+                    9AM-5PM PST
+                  </p>
+                  <div class="map-container">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100940.14245968236!2d-122.43760000000003!3d37.75769999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1686771362478!5m2!1sen!2s"
+                      width="100%"
+                      height="250"
+                      style="border: 0"
+                      allowfullscreen=""
+                      loading="lazy"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="section-padding bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <h2>Frequently Asked Questions</h2>
+              <p class="lead">
+                Find answers to common questions about our services
+              </p>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="accordion" id="faqAccordion">
+                <div class="faq-item">
+                  <h5 class="mb-0">
+                    <button
+                      class="btn btn-link w-100 text-start text-decoration-none text-dark fw-bold"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq1"
+                      aria-expanded="true"
+                      aria-controls="faq1"
+                    >
+                      How quickly do you respond to inquiries?
+                    </button>
+                  </h5>
+                  <div
+                    id="faq1"
+                    class="collapse show"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="pt-3">
+                      We typically respond to all inquiries within 24 hours
+                      during business days. For urgent matters, we recommend
+                      using our live chat feature or calling us directly.
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-item">
+                  <h5 class="mb-0">
+                    <button
+                      class="btn btn-link w-100 text-start text-decoration-none text-dark fw-bold collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq2"
+                      aria-expanded="false"
+                      aria-controls="faq2"
+                    >
+                      What industries do you specialize in?
+                    </button>
+                  </h5>
+                  <div
+                    id="faq2"
+                    class="collapse"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="pt-3">
+                      We have experience across multiple industries including
+                      technology, finance, healthcare, e-commerce, education,
+                      and more. Our team adapts to the specific needs of each
+                      industry we serve.
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-item">
+                  <h5 class="mb-0">
+                    <button
+                      class="btn btn-link w-100 text-start text-decoration-none text-dark fw-bold collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq3"
+                      aria-expanded="false"
+                      aria-controls="faq3"
+                    >
+                      Do you offer custom solutions?
+                    </button>
+                  </h5>
+                  <div
+                    id="faq3"
+                    class="collapse"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="pt-3">
+                      Yes, we specialize in creating custom solutions tailored
+                      to your specific business needs. During our consultation
+                      process, we'll work with you to understand your
+                      requirements and develop a solution that addresses your
+                      unique challenges.
+                    </div>
+                  </div>
+                </div>
+                <div class="faq-item">
+                  <h5 class="mb-0">
+                    <button
+                      class="btn btn-link w-100 text-start text-decoration-none text-dark fw-bold collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq4"
+                      aria-expanded="false"
+                      aria-controls="faq4"
+                    >
+                      What are your business hours?
+                    </button>
+                  </h5>
+                  <div
+                    id="faq4"
+                    class="collapse"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="pt-3">
+                      Our main offices are open from 9AM to 6PM local time,
+                      Monday through Friday. However, our support team is
+                      available 24/7 for urgent matters, and we have team
+                      members in different time zones to accommodate global
+                      clients.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
