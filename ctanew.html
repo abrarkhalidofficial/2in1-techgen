@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProposalFlow - Professional CFP Management Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-tertiary: #1a1a1a;
+            --bg-card: #1e1e1e;
+            --bg-accent: #252525;
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3b3;
+            --text-muted: #666666;
+            --accent-primary: #6366f1;
+            --accent-secondary: #8b5cf6;
+            --accent-tertiary: #ec4899;
+            --accent-gradient: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+            --border-color: #333333;
+            --border-accent: #444444;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+            --shadow-md: 0 10px 25px -3px rgba(0, 0, 0, 0.5);
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            --shadow-xl: 0 35px 60px -12px rgba(0, 0, 0, 0.7);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        .heading-1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 800; line-height: 1.1; }
+        .heading-2 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; line-height: 1.2; }
+        .heading-3 { font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 600; line-height: 1.3; }
+        .heading-4 { font-size: clamp(1.25rem, 2.5vw, 2rem); font-weight: 600; line-height: 1.3; }
+        .body-lg { font-size: 1.25rem; line-height: 1.7; }
+        .body-md { font-size: 1rem; line-height: 1.6; }
+        .body-sm { font-size: 0.875rem; line-height: 1.5; }
+
+        /* Utilities */
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
+        .text-center { text-align: center; }
+        .text-gradient { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .relative { position: relative; }
+        .absolute { position: absolute; }
+        .flex { display: flex; }
+        .grid { display: grid; }
+        .hidden { display: none; }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 10, 10, 0.98);
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.75rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gradient);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.875rem 2rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border-accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--bg-accent);
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid transparent;
+        }
+
+        .btn-ghost:hover {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--accent-gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--accent-primary);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, var(--bg-card), var(--bg-tertiary));
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, var(--accent-primary), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            animation: rotate 4s linear infinite;
+        }
+
+        .feature-card:hover::before {
+            opacity: 0.1;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-gradient);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding-top: 80px;
+            background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            z-index: 10;
+            position: relative;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; }
+        .animate-fade-in-left { animation: fadeInLeft 0.8s ease-out forwards; opacity: 0; }
+        .animate-fade-in-right { animation: fadeInRight 0.8s ease-out forwards; opacity: 0; }
+        .animate-scale-in { animation: scaleIn 0.6s ease-out forwards; opacity: 0; }
+        .animate-slide-in-up { animation: slideInUp 0.6s ease-out forwards; opacity: 0; }
+
+        /* Sections */
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-alt {
+            background: var(--bg-secondary);
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            font-weight: 500;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        /* Process Steps */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-step::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            right: -1rem;
+            width: 2rem;
+            height: 2px;
+            background: var(--accent-gradient);
+            opacity: 0.3;
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        .process-number {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .testimonial {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 2rem;
+            font-size: 4rem;
+            color: var(--accent-primary);
+            opacity: 0.3;
+            font-family: serif;
+        }
+
+        .testimonial-content {
+            margin-bottom: 2rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-primary);
+        }
+
+        .author-info h4 {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card.featured {
+            background: var(--accent-gradient);
+            transform: scale(1.05);
+            border: none;
+            color: white;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-8px);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 1.5rem 0;
+        }
+
+        .price-period {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .features-list li {
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            color: var(--accent-primary);
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        /* Forms */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 1rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border-color);
+            padding: 2rem;
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .mobile-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .mobile-nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.125rem;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .hero {
+                padding-top: 120px;
+                text-align: center;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-step::after {
+                display: none;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                padding: 4rem 0;
+            }
+
+            .heading-1 {
+                font-size: 2.5rem;
+            }
+
+            .heading-2 {
+                font-size: 2rem;
+            }
+
+            .card, .feature-card, .testimonial, .pricing-card {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-primary);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-secondary);
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--accent-primary);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Success Stories Section */
+        .success-story {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .success-story:nth-child(even) {
+            direction: rtl;
+        }
+
+        .success-story:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .success-image {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .success-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .success-image:hover img {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .success-story {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .success-story:nth-child(even) {
+                direction: ltr;
+            }
+        }
+
+        /* Integration Logos */
+        .integration-logos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .integration-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            transition: all 0.3s ease;
+            opacity: 0.7;
+        }
+
+        .integration-logo:hover {
+            opacity: 1;
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .integration-logo img {
+            max-width: 80px;
+            max-height: 40px;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .integration-logo:hover img {
+            filter: grayscale(0%);
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-tertiary);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer.active {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 200px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-icon.active {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="logo">ProposalFlow</a>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <a href="#" class="btn btn-ghost">Sign In</a>
+                    <a href="#" class="btn btn-primary">Start Free Trial</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="mobile-nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="btn btn-primary" style="margin-top: 1rem;">Start Free Trial</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="floating-element" style="top: 20%; left: 10%; width: 100px; height: 100px; background: var(--accent-gradient); border-radius: 50%; animation-delay: 0s;"></div>
+        <div class="floating-element" style="top: 60%; right: 15%; width: 60px; height: 60px; background: var(--accent-secondary); border-radius: 50%; animation-delay: 2s;"></div>
+        <div class="floating-element" style="bottom: 30%; left: 20%; width: 80px; height: 80px; background: var(--accent-tertiary); border-radius: 50%; animation-delay: 4s;"></div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="heading-1 animate-fade-in-up" style="margin-bottom: 2rem;">
+                    Streamline Your <span class="text-gradient">CFP Process</span> Like Never Before
+                </h1>
+                <p class="body-lg animate-fade-in-up" style="animation-delay: 0.2s; color: var(--text-secondary); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Transform your call for proposals management with our comprehensive platform. From submission to selection, manage everything seamlessly with advanced analytics and collaborative tools.
+                </p>
+                <div class="animate-fade-in-up" style="animation-delay: 0.4s; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="#" class="btn btn-primary" style="padding: 1.25rem 2.5rem; font-size: 1.125rem;">
+                        Start Free Trial
+                        <svg style="margin-left: 0.5rem;" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="btn btn-outline" style="padding: 1.25rem 2.5rem; font-size: 1.125rem;">
+                        Watch Demo
+                        <svg style="margin-left: 0.5rem;" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card animate-scale-in" style="animation-delay: 0.1s;">
+                    <span class="stat-number" data-target="15000">0</span>
+                    <div class="stat-label">Proposals Managed</div>
+                </div>
+                <div class="stat-card animate-scale-in" style="animation-delay: 0.2s;">
+                    <span class="stat-number" data-target="750">0</span>
+                    <div class="stat-label">Events Organized</div>
+                </div>
+                <div class="stat-card animate-scale-in" style="animation-delay: 0.3s;">
+                    <span class="stat-number" data-target="98">0</span>
+                    <div class="stat-label">Satisfaction Rate %</div>
+                </div>
+                <div class="stat-card animate-scale-in" style="animation-delay: 0.4s;">
+                    <span class="stat-number" data-target="65">0</span>
+                    <div class="stat-label">Countries Served</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section section-alt">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 4rem;">
+                <h2 class="heading-2 animate-fade-in-up" style="margin-bottom: 1.5rem;">
+                    Powerful Features for <span class="text-gradient">Modern Events</span>
+                </h2>
+                <p class="body-lg animate-fade-in-up" style="animation-delay: 0.2s; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                    Everything you need to manage successful conferences and events with enterprise-grade security and reliability.
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card animate-scale-in" style="animation-delay: 0.1s;">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" fill="white" viewBox="0 0 24 24">
+                            <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3 class="heading-4" style="margin-bottom: 1rem;">Smart Submission Management</h3>
+                    <p class="body-md" style="color: var(--text-secondary); margin-bottom: 2rem;">
+                        Automated workflows for proposal submissions, reviews, and approvals with customizable forms and intelligent routing.
+                    </p>
+                    <ul style="list-style: none; text-align: left; color: var(--text-secondary);">
+                        <li style="margin-bottom: 0.5rem;"><span class="check-icon">✓</span> Custom submission forms</li>
+                        <li style="margin-bottom: 0.5rem;"><span class="check-icon">✓</span> Automated notifications</li>
+                        <li style="margin-bottom: 0.5rem;"><span class="check-icon">✓</span> Deadline management</li>
+                        <li><span class="check-icon">✓</span> Bulk operations</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card animate-scale-in" style="animation-delay: 0.2s;">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" fill="white" viewBox="0 0 24 24">
+                            <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3 class="heading-4" style="margin-bottom: 1rem;">Collaborative Review System</h3>
+                    <p class="body-md" style="color: var(--text-secondary); margin-bottom: 2rem;">
+                        Multi-reviewer scoring system with blind reviews, conflict management, and consensus building tools for fair evaluation.
+                    </p>
+                    <ul style="list-style: none; text-align: left; color: var(--text-secondary);">
+                        <li style="margin-bottom: 0.5rem;"><span class="check-icon">✓</span> Multi-criteria scoring</li>
+                        <li style="margin-bottom: 0.5rem;"><span class="check-icon">✓</span> Blind review options</li>
+                        <li style="margin-bottom: 0.5rem;"><span class="check-icon">✓</span> Reviewer assignments</li>
+                        <li><span class="check-icon">✓</span> Conflict detection</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card animate-scale-in" style="animation-delay: 0.3s;">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" fill="white" viewBox="0 0 24 24">
+                            <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3 class="heading-4" style="margin-bottom: 1rem;">Advanced Analytics</h3>
+                    <p class="body-md" style="color: var(--text-secondary); margin-bottom: 2rem;">
+                        Comprehensive insights into submission trends, reviewer performance, and selection metrics with real-time dashboards.
+                    </p>
+                    <ul style="list-style: none; text-align: left; color: var(--text-secondary);">
+                        <li style="margin-bottom: 0.5rem;"><span class="check-icon">✓</span> Submission analytics</li>
+                        <li style="margin-bottom: 0.5rem;"><span class="check-icon">✓</span> Reviewer insights</li>
+                        <li style="margin-bottom: 0.5rem;"><span class="check-icon">✓</span> Diversity tracking</li>
+                        <li><span class="check-icon">✓</span> Custom reports</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card animate-scale-in" style="animation-delay: 0.4s;">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" fill="white" viewBox="0 0 24 24">
+                            <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3 class="heading-4" style="margin-bottom: 1rem;">Enterprise Security</h3>
+                    <p class="body-md" style="color: var(--text-secondary); margin-bottom: 2rem;">
+                        Bank-level security with encryption, SSO integration, and compliance with international data protection standards.
+                    </p>
+                    <ul style="list-style: none; text-align: left; color: var(--text-secondary);">
+                        <li style="margin-bottom: 0.5rem;"><span class="check-icon">✓</span> End-to-end encryption</li>
+                        <li style="margin-bottom: 0.5rem;"><span class="check-icon">✓</span> SSO integration</li>
+                        <li style="margin-bottom: 0.5rem;"><span class="check-icon">✓</span> GDPR compliance</li>
+                        <li><span class="check-icon">✓</span> Audit trails</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card animate-scale-in" style="animation-delay: 0.5s;">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" fill="white" viewBox="0 0 24 24">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3 class="heading-4" style="margin-bottom: 1rem;">AI-Powered Insights</h3>
+                    <p class="body-md" style="color: var(--text-secondary); margin-bottom: 2rem;">
+                        Leverage machine learning to identify top proposals, detect bias, and optimize your selection process automatically.
+                    </p>
+                    <ul style="list-style: none; text-align: left; color: var(--text-secondary);">
+                        <li style="margin-bottom: 0.5rem;"><span class="check-icon">✓</span> Smart recommendations</li>
+                        <li style="margin-bottom: 0.5rem;"><span class="check-icon">✓</span> Bias detection</li>
+                        <li style="margin-bottom: 0.5rem;"><span class="check-icon">✓</span> Content analysis</li>
+                        <li><span class="check-icon">✓</span> Predictive scoring</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card animate-scale-in" style="animation-delay: 0.6s;">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" fill="white" viewBox="0 0 24 24">
+                            <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3 class="heading-4" style="margin-bottom: 1rem;">Communication Hub</h3>
+                    <p class="body-md" style="color: var(--text-secondary); margin-bottom: 2rem;">
+                        Centralized communication system for speakers, reviewers, and organizers with automated messaging and updates.
+                    </p>
+                    <ul style="list-style: none; text-align: left; color: var(--text-secondary);">
+                        <li style="margin-bottom: 0.5rem;"><span class="check-icon">✓</span> Automated emails</li>
+                        <li style="margin-bottom: 0.5rem;"><span class="check-icon">✓</span> In-app messaging</li>
+                        <li style="margin-bottom: 0.5rem;"><span class="check-icon">✓</span> Status updates</li>
+                        <li><span class="check-icon">✓</span> Feedback collection</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Workflow -->
+    <section id="process" class="section">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 4rem;">
+                <h2 class="heading-2 animate-fade-in-up" style="margin-bottom: 1.5rem;">
+                    Streamlined <span class="text-gradient">Workflow</span>
+                </h2>
+                <p class="body-lg animate-fade-in-up" style="animation-delay: 0.2s; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                    From call to selection, manage your entire CFP process seamlessly with our intuitive step-by-step workflow.
+                </p>
+            </div>
+            
+            <div class="process-grid">
+                <div class="process-step animate-fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="process-number">1</div>
+                    <h3 class="heading-4" style="margin-bottom: 1rem;">Create CFP</h3>
+                    <p class="body-md" style="color: var(--text-secondary);">
+                        Set up your call for proposals with custom forms, criteria, and submission guidelines in minutes.
+                    </p>
+                </div>
+                
+                <div class="process-step animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="process-number">2</div>
+                    <h3 class="heading-4" style="margin-bottom: 1rem;">Collect Submissions</h3>
+                    <p class="body-md" style="color: var(--text-secondary);">
+                        Receive and organize proposals with automated workflows and real-time tracking.
+                    </p>
+                </div>
+                
+                <div class="process-step animate-fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="process-number">3</div>
+                    <h3 class="heading-4" style="margin-bottom: 1rem;">Review & Score</h3>
+                    <p class="body-md" style="color: var(--text-secondary);">
+                        Collaborative review process with multiple reviewers and comprehensive scoring systems.
+                    </p>
+                </div>
+                
+                <div class="process-step animate-fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="process-number">4</div>
+                    <h3 class="heading-4" style="margin-bottom: 1rem;">Make Decisions</h3>
+                    <p class="body-md" style="color: var(--text-secondary);">
+                        Use analytics and AI insights to select the best proposals for your event.
+                    </p>
+                </div>
+                
+                <div class="process-step animate-fade-in-up" style="animation-delay: 0.5s;">
+                    <div class="process-number">5</div>
+                    <h3 class="heading-4" style="margin-bottom: 1rem;">Communicate</h3>
+                    <p class="body-md" style="color: var(--text-secondary);">
+                        Notify speakers and manage post-selection activities with automated communication.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 4rem;">
+                <h2 class="heading-2 animate-fade-in-up" style="margin-bottom: 1.5rem;">
+                    <span class="text-gradient">Success Stories</span> from Our Clients
+                </h2>
+                <p class="body-lg animate-fade-in-up" style="animation-delay: 0.2s; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                    See how leading organizations have transformed their CFP processes with ProposalFlow.
+                </p>
+            </div>
+
+            <div class="success-story animate-fade-in-left" style="animation-delay: 0.1s;">
+                <div class="success-image">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="TechSummit Conference">
+                </div>
+                <div>
+                    <h3 class="heading-3" style="margin-bottom: 1rem;">TechSummit 2024</h3>
+                    <p class="body-lg" style="color: var(--text-secondary); margin-bottom: 2rem;">
+                        "ProposalFlow helped us manage over 2,500 submissions for our annual tech conference. The AI-powered insights identified hidden gems we would have missed, and the collaborative review system made our selection process 70% more efficient."
+                    </p>
+                    <div style="display: flex; gap: 2rem; margin-bottom: 2rem;">
+                        <div>
+                            <div class="stat-number" style="font-size: 2rem; margin-bottom: 0;">2,500</div>
+                            <div class="body-sm" style="color: var(--text-muted);">Submissions</div>
+                        </div>
+                        <div>
+                            <div class="stat-number" style="font-size: 2rem; margin-bottom: 0;">70%</div>
+                            <div class="body-sm" style="color: var(--text-muted);">Time Saved</div>
+                        </div>
+                        <div>
+                            <div class="stat-number" style="font-size: 2rem; margin-bottom: 0;">95%</div>
+                            <div class="body-sm" style="color: var(--text-muted);">Satisfaction</div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-outline">Read Full Case Study</a>
+                </div>
+            </div>
+
+            <div class="success-story animate-fade-in-right" style="animation-delay: 0.3s;">
+                <div class="success-image">
+                    <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Academic Conference">
+                </div>
+                <div>
+                    <h3 class="heading-3" style="margin-bottom: 1rem;">International AI Research Conference</h3>
+                    <p class="body-lg" style="color: var(--text-secondary); margin-bottom: 2rem;">
+                        "The blind review system and conflict detection features ensured our peer review process was completely unbiased. We processed 1,800 academic papers with unprecedented transparency and fairness."
+                    </p>
+                    <div style="display: flex; gap: 2rem; margin-bottom: 2rem;">
+                        <div>
+                            <div class="stat-number" style="font-size: 2rem; margin-bottom: 0;">1,800</div>
+                            <div class="body-sm" style="color: var(--text-muted);">Papers</div>
+                        </div>
+                        <div>
+                            <div class="stat-number" style="font-size: 2rem; margin-bottom: 0;">100%</div>
+                            <div class="body-sm" style="color: var(--text-muted);">Blind Review</div>
+                        </div>
+                        <div>
+                            <div class="stat-number" style="font-size: 2rem; margin-bottom: 0;">45</div>
+                            <div class="body-sm" style="color: var(--text-muted);">Countries</div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-outline">Read Full Case Study</a>
+                </div>
+            </div>
+
+            <div class="success-story animate-fade-in-left" style="animation-delay: 0.5s;">
+                <div class="success-image">
+                    <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Design Conference">
+                </div>
+                <div>
+                    <h3 class="heading-3" style="margin-bottom: 1rem;">Global Design Week</h3>
+                    <p class="body-lg" style="color: var(--text-secondary); margin-bottom: 2rem;">
+                        "Managing multiple events across different time zones was seamless with ProposalFlow. The analytics dashboard gave us insights that helped us create the most diverse speaker lineup in our event's history."
+                    </p>
+                    <div style="display: flex; gap: 2rem; margin-bottom: 2rem;">
+                        <div>
+                            <div class="stat-number" style="font-size: 2rem; margin-bottom: 0;">12</div>
+                            <div class="body-sm" style="color: var(--text-muted);">Events</div>
+                        </div>
+                        <div>
+                            <div class="stat-number" style="font-size: 2rem; margin-bottom: 0;">60%</div>
+                            <div class="body-sm" style="color: var(--text-muted);">Diversity</div>
+                        </div>
+                        <div>
+                            <div class="stat-number" style="font-size: 2rem; margin-bottom: 0;">8</div>
+                            <div class="body-sm" style="color: var(--text-muted);">Time Zones</div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-outline">Read Full Case Study</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 4rem;">
+                <h2 class="heading-2 animate-fade-in-up" style="margin-bottom: 1.5rem;">
+                    What Our <span class="text-gradient">Clients Say</span>
+                </h2>
+                <p class="body-lg animate-fade-in-up" style="animation-delay: 0.2s; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                    Trusted by conference organizers, academic institutions, and enterprises worldwide.
+                </p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial animate-scale-in" style="animation-delay: 0.1s;">
+                    <div class="testimonial-content">
+                        "ProposalFlow transformed our CFP process completely. We went from managing 500 submissions manually to handling 2000+ with ease. The review system is incredibly intuitive, and the AI insights helped us discover amazing speakers we might have overlooked."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Sarah Mitchell" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Sarah Mitchell</h4>
+                            <p>Conference Director, TechSummit</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial animate-scale-in" style="animation-delay: 0.2s;">
+                    <div class="testimonial-content">
+                        "The collaborative review features saved us weeks of coordination. Our international review committee can now work efficiently from anywhere in the world. The blind review system ensures complete fairness in our academic conference."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="David Rodriguez" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Dr. David Rodriguez</h4>
+                            <p>Program Chair, International AI Conference</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial animate-scale-in" style="animation-delay: 0.3s;">
+                    <div class="testimonial-content">
+                        "The analytics dashboard gives us insights we never had before. We can now track diversity metrics, identify trends, and make data-driven decisions about our speaker lineup. It's revolutionized how we approach conference planning."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Emily Chen" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Emily Chen</h4>
+                            <p>Event Manager, UX Design Week</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial animate-scale-in" style="animation-delay: 0.4s;">
+                    <div class="testimonial-content">
+                        "Security was our biggest concern when moving to a digital CFP system. ProposalFlow's enterprise-grade security and compliance features gave us complete peace of mind. The audit trails are comprehensive and detailed."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Michael Thompson" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Michael Thompson</h4>
+                            <p>CTO, Global Tech Summit</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial animate-scale-in" style="animation-delay: 0.5s;">
+                    <div class="testimonial-content">
+                        "Managing multiple conferences simultaneously used to be a nightmare. ProposalFlow's multi-event dashboard and automated workflows have made it seamless. We've increased our event capacity by 300% without adding staff."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Lisa Wang" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Lisa Wang</h4>
+                            <p>Operations Director, Conference Solutions Inc.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial animate-scale-in" style="animation-delay: 0.6s;">
+                    <div class="testimonial-content">
+                        "The customer support is exceptional. During our first major conference, the team was available 24/7 to ensure everything ran smoothly. The platform is intuitive, but knowing expert help is always available gives us confidence."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="James Wilson" class="author-avatar">
+                        <div class="author-info">
+                            <h4>James Wilson</h4>
+                            <p>Event Coordinator, Innovation Summit</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration Partners -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 4rem;">
+                <h2 class="heading-2 animate-fade-in-up" style="margin-bottom: 1.5rem;">
+                    Seamless <span class="text-gradient">Integrations</span>
+                </h2>
+                <p class="body-lg animate-fade-in-up" style="animation-delay: 0.2s; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                    Connect with your favorite tools and platforms to create a unified event management ecosystem.
+                </p>
+            </div>
+            
+            <div class="integration-logos">
+                <div class="integration-logo animate-scale-in" style="animation-delay: 0.1s;">
+                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Slack Integration">
+                </div>
+                <div class="integration-logo animate-scale-in" style="animation-delay: 0.2s;">
+                    <img src="https://images.unsplash.com/photo-1633409361618-c73427e4e206?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Zoom Integration">
+                </div>
+                <div class="integration-logo animate-scale-in" style="animation-delay: 0.3s;">
+                    <img src="https://images.unsplash.com/photo-1618044733300-9472054094ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Google Calendar">
+                </div>
+                <div class="integration-logo animate-scale-in" style="animation-delay: 0.4s;">
+                    <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Mailchimp">
+                </div>
+                <div class="integration-logo animate-scale-in" style="animation-delay: 0.5s;">
+                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Eventbrite">
+                </div>
+                <div class="integration-logo animate-scale-in" style="animation-delay: 0.6s;">
+                    <img src="https://images.unsplash.com/photo-1633409361618-c73427e4e206?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Zapier">
+                </div>
+                <div class="integration-logo animate-scale-in" style="animation-delay: 0.7s;">
+                    <img src="https://images.unsplash.com/photo-1618044733300-9472054094ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Microsoft Teams">
+                </div>
+                <div class="integration-logo animate-scale-in" style="animation-delay: 0.8s;">
+                    <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Salesforce">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 4rem;">
+                <h2 class="heading-2 animate-fade-in-up" style="margin-bottom: 1.5rem;">
+                    Choose Your <span class="text-gradient">Plan</span>
+                </h2>
+                <p class="body-lg animate-fade-in-up" style="animation-delay: 0.2s; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                    Flexible pricing for events of all sizes, from small workshops to large international conferences.
+                </p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card animate-scale-in" style="animation-delay: 0.1s;">
+                    <h3 class="heading-4" style="margin-bottom: 1rem;">Starter</h3>
+                    <div class="price">$49<span class="price-period">/month</span></div>
+                    <p class="body-md" style="color: var(--text-secondary); margin-bottom: 2rem;">
+                        Perfect for small conferences and workshops
+                    </p>
+                    <ul class="features-list">
+                        <li><span class="check-icon">✓</span> Up to 100 submissions</li>
+                        <li><span class="check-icon">✓</span> 3 reviewers</li>
+                        <li><span class="check-icon">✓</span> Basic analytics</li>
+                        <li><span class="check-icon">✓</span> Email support</li>
+                        <li><span class="check-icon">✓</span> Custom forms</li>
+                        <li><span class="check-icon">✓</span> Automated notifications</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline" style="width: 100%; margin-top: 2rem;">Start Free Trial</a>
+                </div>
+
+                <div class="pricing-card featured animate-scale-in" style="animation-delay: 0.2s;">
+                    <div class="pricing-badge">Most Popular</div>
+                    <h3 class="heading-4" style="margin-bottom: 1rem;">Professional</h3>
+                    <div class="price">$149<span class="price-period">/month</span></div>
+                    <p class="body-md" style="color: rgba(255,255,255,0.8); margin-bottom: 2rem;">
+                        Ideal for medium to large conferences
+                    </p>
+                    <ul class="features-list" style="color: rgba(255,255,255,0.9);">
+                        <li><span class="check-icon" style="color: white;">✓</span> Up to 1000 submissions</li>
+                        <li><span class="check-icon" style="color: white;">✓</span> Unlimited reviewers</li>
+                        <li><span class="check-icon" style="color: white;">✓</span> Advanced analytics</li>
+                        <li><span class="check-icon" style="color: white;">✓</span> Priority support</li>
+                        <li><span class="check-icon" style="color: white;">✓</span> Custom branding</li>
+                        <li><span class="check-icon" style="color: white;">✓</span> AI-powered insights</li>
+                        <li><span class="check-icon" style="color: white;">✓</span> Multi-event management</li>
+                        <li><span class="check-icon" style="color: white;">✓</span> API access</li>
+                    </ul>
+                    <a href="#" class="btn" style="width: 100%; margin-top: 2rem; background: white; color: var(--accent-primary);">Start Free Trial</a>
+                </div>
+
+                <div class="pricing-card animate-scale-in" style="animation-delay: 0.3s;">
+                    <h3 class="heading-4" style="margin-bottom: 1rem;">Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <p class="body-md" style="color: var(--text-secondary); margin-bottom: 2rem;">
+                        For large organizations and multi-event management
+                    </p>
+                    <ul class="features-list">
+                        <li><span class="check-icon">✓</span> Unlimited submissions</li>
+                        <li><span class="check-icon">✓</span> Unlimited reviewers</li>
+                        <li><span class="check-icon">✓</span> Custom integrations</li>
+                        <li><span class="check-icon">✓</span> Dedicated support</li>
+                        <li><span class="check-icon">✓</span> SLA guarantee</li>
+                        <li><span class="check-icon">✓</span> White-label solution</li>
+                        <li><span class="check-icon">✓</span> Advanced security</li>
+                        <li><span class="check-icon">✓</span> Custom training</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary" style="width: 100%; margin-top: 2rem;">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 4rem;">
+                <h2 class="heading-2 animate-fade-in-up" style="margin-bottom: 1.5rem;">
+                    Frequently Asked <span class="text-gradient">Questions</span>
+                </h2>
+                <p class="body-lg animate-fade-in-up" style="animation-delay: 0.2s; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                    Get answers to common questions about ProposalFlow and our CFP management platform.
+                </p>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item animate-fade-in-up" style="animation-delay: 0.1s;">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How quickly can I set up my first CFP?
+                        <svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p style="color: var(--text-secondary);">You can set up your first CFP in under 10 minutes using our intuitive setup wizard. Our pre-built templates for different event types make it even faster to get started.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Is my data secure and compliant?
+                        <svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p style="color: var(--text-secondary);">Yes, we use enterprise-grade security with end-to-end encryption, regular security audits, and compliance with GDPR, CCPA, and other international data protection standards.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item animate-fade-in-up" style="animation-delay: 0.3s;">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Can I customize the submission forms?
+                        <svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p style="color: var(--text-secondary);">Absolutely! You can create fully customized submission forms with various field types, conditional logic, file uploads, and validation rules to match your specific requirements.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item animate-fade-in-up" style="animation-delay: 0.4s;">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How does the AI-powered insights feature work?
+                        <svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p style="color: var(--text-secondary);">Our AI analyzes submission content, identifies patterns, detects potential bias, and provides recommendations to help you make more informed decisions while maintaining human oversight.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item animate-fade-in-up" style="animation-delay: 0.5s;">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What kind of support do you provide?
+                        <svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p style="color: var(--text-secondary);">We offer comprehensive support including email support for all plans, priority support for Professional plans, and dedicated account management for Enterprise customers. We also provide extensive documentation and video tutorials.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item animate-fade-in-up" style="animation-delay: 0.6s;">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Can I migrate from my current CFP system?
+                        <svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p style="color: var(--text-secondary);">Yes, we provide migration assistance to help you transfer your existing data. Our team will work with you to ensure a smooth transition with minimal disruption to your ongoing processes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 4rem;">
+                <h2 class="heading-2 animate-fade-in-up" style="margin-bottom: 1.5rem;">
+                    Ready to Get <span class="text-gradient">Started?</span>
+                </h2>
+                <p class="body-lg animate-fade-in-up" style="animation-delay: 0.2s; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                    Let's discuss how ProposalFlow can streamline your CFP process and transform your event management.
+                </p>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <form class="card animate-scale-in" style="animation-delay: 0.3s;" id="contactForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label">Full Name *</label>
+                            <input type="text" class="form-input" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email Address *</label>
+                            <input type="email" class="form-input" required placeholder="Enter your email">
+                        </div>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label">Organization</label>
+                            <input type="text" class="form-input" placeholder="Your organization name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Event Type</label>
+                            <select class="form-select">
+                                <option value="">Select event type</option>
+                                <option value="tech">Tech Conference</option>
+                                <option value="academic">Academic Conference</option>
+                                <option value="workshop">Workshop Series</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Expected Submissions</label>
+                        <select class="form-select">
+                            <option value="">Select expected volume</option>
+                            <option value="small">Less than 100</option>
+                            <option value="medium">100-500</option>
+                            <option value="large">500-1000</option>
+                            <option value="enterprise">1000+</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Tell us about your event</label>
+                        <textarea class="form-textarea" rows="4" placeholder="Describe your conference and CFP requirements..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.125rem; padding: 1.25rem;">
+                        <span class="btn-text">Start Free Trial</span>
+                        <span class="loading hidden"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section section-alt">
+        <div class="container text-center">
+            <h2 class="heading-2 animate-fade-in-up" style="margin-bottom: 1.5rem;">
+                Transform Your CFP Process <span class="text-gradient">Today</span>
+            </h2>
+            <p class="body-lg animate-fade-in-up" style="animation-delay: 0.2s; color: var(--text-secondary); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Join thousands of event organizers who trust ProposalFlow for their conferences. Start your free trial and see the difference in minutes.
+            </p>
+            <div class="animate-fade-in-up" style="animation-delay: 0.4s; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#" class="btn btn-primary" style="padding: 1.25rem 2.5rem; font-size: 1.125rem;">Start Free Trial</a>
+                <a href="#" class="btn btn-outline" style="padding: 1.25rem 2.5rem; font-size: 1.125rem;">Schedule Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--bg-primary); border-top: 1px solid var(--border-color); padding: 4rem 0 2rem;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+                <div>
+                    <div class="logo" style="margin-bottom: 1rem; font-size: 1.5rem;">ProposalFlow</div>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                        The most comprehensive CFP management platform for modern events and conferences.
+                    </p>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" style="color: var(--text-secondary); transition: color 0.3s ease;">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" style="color: var(--text-secondary); transition: color 0.3s ease;">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" style="color: var(--text-secondary); transition: color 0.3s ease;">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--text-primary); font-weight: 600; margin-bottom: 1rem;">Product</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease;">Features</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease;">Pricing</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease;">Integrations</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease;">API</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease;">Security</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--text-primary); font-weight: 600; margin-bottom: 1rem;">Resources</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease;">Documentation</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease;">Help Center</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease;">Blog</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease;">Case Studies</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease;">Webinars</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--text-primary); font-weight: 600; margin-bottom: 1rem;">Company</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease;">About</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease;">Careers</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease;">Contact</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease;">Privacy</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease;">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid var(--border-color); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <p style="color: var(--text-muted);">© 2024 ProposalFlow. All rights reserved.</p>
+                <p style="color: var(--text-muted);">Made with ❤️ for event organizers worldwide</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('[class*="animate-"]').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+
+        // Counter animation
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current) + (target === 98 ? '%' : target >= 1000 ? '+' : '+');
+            }, 20);
+        }
+
+        // Start counter animations when in view
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.dataset.target);
+                    animateCounter(entry.target, target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        document.querySelectorAll('[data-target]').forEach(counter => {
+            counterObserver.observe(counter);
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // FAQ toggle functionality
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('.faq-icon');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+                if (otherAnswer !== answer) {
+                    otherAnswer.classList.remove('active');
+                    otherAnswer.previousElementSibling.querySelector('.faq-icon').classList.remove('active');
+                }
+            });
+            
+            // Toggle current FAQ
+            answer.classList.toggle('active');
+            icon.classList.toggle('active');
+        }
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const loading = submitBtn.querySelector('.loading');
+            
+            // Show loading state
+            btnText.classList.add('hidden');
+            loading.classList.remove('hidden');
+            submitBtn.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                // Hide loading state
+                btnText.classList.remove('hidden');
+                loading.classList.add('hidden');
+                submitBtn.disabled = false;
+                
+                // Show success message
+                alert('Thank you for your interest! We will contact you soon to set up your free trial.');
+                
+                // Reset form
+                this.reset();
+            }, 2000);
+        });
+
+        // Add hover effects to integration logos
+        document.querySelectorAll('.integration-logo').forEach(logo => {
+            logo.addEventListener('mouseenter', () => {
+                logo.style.transform = 'translateY(-8px) scale(1.05)';
+            });
+            
+            logo.addEventListener('mouseleave', () => {
+                logo.style.transform = 'translateY(-4px) scale(1)';
+            });
+        });
+
+        // Parallax effect for floating elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelectorAll('.floating-element');
+            
+            parallax.forEach(element => {
+                const speed = 0.5;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Add loading animation to buttons
+        document.querySelectorAll('.btn-primary').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#' || this.type === 'submit') {
+                    e.preventDefault();
+                    
+                    // Add ripple effect
+                    const ripple = document.createElement('span');
+                    ripple.style.position = 'absolute';
+                    ripple.style.borderRadius = '50%';
+                    ripple.style.background = 'rgba(255, 255, 255, 0.3)';
+                    ripple.style.transform = 'scale(0)';
+                    ripple.style.animation = 'ripple 0.6s linear';
+                    ripple.style.left = '50%';
+                    ripple.style.top = '50%';
+                    ripple.style.width = '20px';
+                    ripple.style.height = '20px';
+                    ripple.style.marginLeft = '-10px';
+                    ripple.style.marginTop = '-10px';
+                    
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                }
+            });
+        });
+
+        // Add CSS for ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add entrance animations to hero elements
+            setTimeout(() => {
+                document.querySelectorAll('.hero .animate-fade-in-up').forEach((el, index) => {
+                    setTimeout(() => {
+                        el.style.animationPlayState = 'running';
+                    }, index * 200);
+                });
+            }, 500);
+        });
+    </script>
+</body>
+</html>
