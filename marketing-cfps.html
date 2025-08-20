@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metas -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta
+      name="keywords"
+      content="CFP marketing, financial planner marketing, certified financial planner, financial advisor lead generation, CFP digital marketing, financial services marketing"
+    />
+    <meta
+      name="description"
+      content="OneTechgen specializes in innovative marketing solutions for Certified Financial Planners. Drive growth, acquire qualified leads, and elevate your financial advisory practice with our tailored marketing strategies."
+    />
+    <meta name="author" content="OneTechgen" />
+
+    <!-- Title  -->
+    <title>
+      OneTechgen - Marketing Solutions for Certified Financial Planners
+    </title>
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="https://images.unsplash.com/photo-1563013546-73e4c9c5f4de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Core Style Css -->
+    <style>
+      :root {
+        --primary: #212529;
+        --secondary: #d4af37;
+        --accent: #3e92cc;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --success: #28a745;
+      }
+
+      body {
+        font-family: "Manrope", sans-serif;
+        color: var(--dark);
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+      }
+      .main-title {
+        font-family: "Syne", sans-serif;
+        font-size: clamp(1.75rem, 5vw, 3.5rem);
+        font-weight: 800;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+        animation: titleSlide 1.8s ease-out;
+      }
+      .stroke-text {
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+        -webkit-text-fill-color: transparent;
+      }
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--secondary);
+        border-color: var(--secondary);
+        color: var(--dark);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-secondary {
+        background-color: var(--secondary);
+        border-color: var(--secondary);
+        color: var(--dark);
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .btn-secondary:hover {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .section-padding {
+        padding: 100px 0;
+      }
+
+      .bg-light {
+        background-color: var(--light) !important;
+      }
+
+      .bg-primary {
+        background-color: var(--primary) !important;
+      }
+
+      .text-primary {
+        color: var(--primary) !important;
+      }
+
+      .text-secondary {
+        color: var(--secondary) !important;
+      }
+
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+          url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80")
+            no-repeat center center/cover;
+        padding: 180px 0 120px;
+        color: white;
+      }
+      .nav-item {
+        color: var(--light) !important;
+      }
+      .navbar {
+        padding: 20px 0;
+        transition: all 0.3s ease;
+        color: var(--light) !important;
+      }
+      .navbar-brand {
+        color: var(--light) !important;
+      }
+      .navbar-nav {
+        color: var(--light) !important;
+      }
+      .navbar-nav .nav-link {
+        color: var(--light) !important;
+      }
+
+      .navbar.scrolled {
+        padding: 10px 0;
+        background-color: var(--primary) !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar.scrolled .nav-link {
+        color: var(--light) !important;
+      }
+
+      .navbar.scrolled .navbar-brand {
+        color: var(--light) !important;
+      }
+
+      .service-card {
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        height: 100%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .stats-box {
+        text-align: center;
+        padding: 30px;
+        border-radius: 10px;
+        background: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .stats-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .stats-number {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 10px;
+      }
+
+      .testimonial-card {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin: 15px;
+        position: relative;
+      }
+
+      .testimonial-card:after {
+        content: '"';
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 60px;
+        color: var(--secondary);
+        font-family: serif;
+        opacity: 0.2;
+      }
+      .color {
+        color: var(--primary);
+      }
+
+      .client-image {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--secondary);
+      }
+
+      .form-control {
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid #e1e1e1;
+      }
+
+      .form-control:focus {
+        box-shadow: none;
+        border-color: var(--primary);
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .social-icon:hover {
+        background: var(--secondary);
+        color: var(--dark);
+        transform: translateY(-3px);
+      }
+
+      .footer {
+        background: var(--dark);
+        color: white;
+        padding: 80px 0 30px;
+      }
+
+      .footer a {
+        color: #ddd;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        color: var(--secondary);
+      }
+
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .back-to-top.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .back-to-top:hover {
+        background: var(--secondary);
+        color: var(--dark);
+      }
+
+      .section-title {
+        position: relative;
+        margin-bottom: 60px;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: var(--secondary);
+      }
+
+      .section-title.text-center:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .portfolio-item {
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 30px;
+      }
+
+      .portfolio-item img {
+        transition: all 0.5s ease;
+        width: 100%;
+      }
+
+      .portfolio-item:hover img {
+        transform: scale(1.1);
+      }
+
+      .portfolio-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(10, 36, 99, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+
+      .portfolio-item:hover .portfolio-overlay {
+        opacity: 1;
+      }
+
+      @media (max-width: 768px) {
+        .hero-section {
+          padding: 120px 0 80px;
+        }
+
+        .section-padding {
+          padding: 60px 0;
+        }
+
+        .display-3 {
+          font-size: 2.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">OneTechgen</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonials">Testimonials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#team">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pricing">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#blog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#faq">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7" data-aos="fade-right">
+            <h1 class="main-title">
+              Marketing Solutions for <br /><span class="stroke-text"
+                >Certified</span
+              >
+              Financial Planners
+            </h1>
+
+            <p class="lead mb-5">
+              Drive growth, acquire qualified leads, and elevate your financial
+              advisory practice with our tailored marketing strategies.
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#contact" class="btn btn-primary">Get Started</a>
+              <a href="#services" class="btn btn-secondary">Our Services</a>
+            </div>
+          </div>
+          <div class="col-lg-5" style="padding-top: 1em" data-aos="fade-left">
+            <img
+              src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+              class="img-fluid rounded shadow"
+              alt="Financial Planning"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-right">
+            <h2 class="section-title">About OneTechgen</h2>
+            <p class="lead">
+              We specialize in helping Certified Financial Planners grow their
+              practices through targeted marketing strategies.
+            </p>
+            <p>
+              With years of experience in the financial services industry, we
+              understand the unique challenges CFPs face when it comes to
+              marketing and client acquisition. Our team of experts combines
+              financial industry knowledge with cutting-edge marketing
+              techniques to deliver results that matter.
+            </p>
+            <p>
+              We believe that every financial planner deserves to have a steady
+              stream of qualified leads without sacrificing the personal touch
+              that makes your practice unique.
+            </p>
+            <div class="d-flex mt-4">
+              <div class="me-4">
+                <h4 class="text-primary">250+</h4>
+                <p>CFPs Supported</p>
+              </div>
+              <div class="me-4">
+                <h4 class="text-primary">12+</h4>
+                <p>Years Experience</p>
+              </div>
+              <div>
+                <h4 class="text-primary">98%</h4>
+                <p>Client Satisfaction</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <img
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+              class="img-fluid rounded shadow"
+              alt="About OneTechgen"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title text-center">Our Services</h2>
+            <p class="lead">
+              Comprehensive marketing solutions tailored for financial
+              professionals
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="service-card card h-100 border-0">
+              <div class="card-body p-4">
+                <div class="icon-box mb-4">
+                  <i class="fas fa-chart-line fa-3x text-primary"></i>
+                </div>
+                <h4 class="mb-3">Digital Marketing</h4>
+                <p>
+                  Targeted online campaigns to reach potential clients searching
+                  for financial planning services.
+                </p>
+                <ul class="list-unstyled">
+                  <li>
+                    <i class="fas fa-check text-success me-2"></i> SEO
+                    Optimization
+                  </li>
+                  <li>
+                    <i class="fas fa-check text-success me-2"></i> PPC
+                    Advertising
+                  </li>
+                  <li>
+                    <i class="fas fa-check text-success me-2"></i> Social Media
+                    Marketing
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="service-card card h-100 border-0">
+              <div class="card-body p-4">
+                <div class="icon-box mb-4">
+                  <i class="fas fa-envelope-open-text fa-3x text-primary"></i>
+                </div>
+                <h4 class="mb-3">Content Marketing</h4>
+                <p>
+                  Establish yourself as an authority with valuable content that
+                  attracts and educates potential clients.
+                </p>
+                <ul class="list-unstyled">
+                  <li>
+                    <i class="fas fa-check text-success me-2"></i> Blog Content
+                  </li>
+                  <li>
+                    <i class="fas fa-check text-success me-2"></i> Email
+                    Newsletters
+                  </li>
+                  <li>
+                    <i class="fas fa-check text-success me-2"></i> Educational
+                    Resources
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="service-card card h-100 border-0">
+              <div class="card-body p-4">
+                <div class="icon-box mb-4">
+                  <i class="fas fa-laptop fa-3x text-primary"></i>
+                </div>
+                <h4 class="mb-3">Website Development</h4>
+                <p>
+                  Professional, compliant websites designed to convert visitors
+                  into qualified leads.
+                </p>
+                <ul class="list-unstyled">
+                  <li>
+                    <i class="fas fa-check text-success me-2"></i> Responsive
+                    Design
+                  </li>
+                  <li>
+                    <i class="fas fa-check text-success me-2"></i> Lead Capture
+                    Forms
+                  </li>
+                  <li>
+                    <i class="fas fa-check text-success me-2"></i> Compliance
+                    Ready
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="service-card card h-100 border-0">
+              <div class="card-body p-4">
+                <div class="icon-box mb-4">
+                  <i class="fas fa-bullseye fa-3x text-primary"></i>
+                </div>
+                <h4 class="mb-3">Lead Generation</h4>
+                <p>
+                  Strategies designed specifically to attract high-net-worth
+                  individuals seeking financial advice.
+                </p>
+                <ul class="list-unstyled">
+                  <li>
+                    <i class="fas fa-check text-success me-2"></i> Targeted
+                    Campaigns
+                  </li>
+                  <li>
+                    <i class="fas fa-check text-success me-2"></i> Lead
+                    Nurturing
+                  </li>
+                  <li>
+                    <i class="fas fa-check text-success me-2"></i> Conversion
+                    Optimization
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <div class="service-card card h-100 border-0">
+              <div class="card-body p-4">
+                <div class="icon-box mb-4">
+                  <i class="fas fa-star fa-3x text-primary"></i>
+                </div>
+                <h4 class="mb-3">Brand Development</h4>
+                <p>
+                  Create a distinctive brand identity that resonates with your
+                  target audience.
+                </p>
+                <ul class="list-unstyled">
+                  <li>
+                    <i class="fas fa-check text-success me-2"></i> Brand
+                    Strategy
+                  </li>
+                  <li>
+                    <i class="fas fa-check text-success me-2"></i> Visual
+                    Identity
+                  </li>
+                  <li>
+                    <i class="fas fa-check text-success me-2"></i> Messaging
+                    Framework
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <div class="service-card card h-100 border-0">
+              <div class="card-body p-4">
+                <div class="icon-box mb-4">
+                  <i class="fas fa-analytics fa-3x text-primary"></i>
+                </div>
+                <h4 class="mb-3">Analytics & Reporting</h4>
+                <p>
+                  Comprehensive tracking and reporting to measure ROI and
+                  optimize your marketing efforts.
+                </p>
+                <ul class="list-unstyled">
+                  <li>
+                    <i class="fas fa-check text-success me-2"></i> Performance
+                    Dashboards
+                  </li>
+                  <li>
+                    <i class="fas fa-check text-success me-2"></i> ROI Analysis
+                  </li>
+                  <li>
+                    <i class="fas fa-check text-success me-2"></i> Monthly
+                    Reports
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-5 bg-primary text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-6 text-center mb-4" data-aos="fade-up">
+            <div class="stats-box">
+              <div class="stats-number">250+</div>
+              <p class="color">Happy Clients</p>
+            </div>
+          </div>
+          <div
+            class="col-md-3 col-6 text-center mb-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="stats-box">
+              <div class="stats-number">480+</div>
+              <p class="color">Projects Completed</p>
+            </div>
+          </div>
+          <div
+            class="col-md-3 col-6 text-center mb-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="stats-box">
+              <div class="stats-number">95%</div>
+              <p class="color">Client Retention</p>
+            </div>
+          </div>
+          <div
+            class="col-md-3 col-6 text-center mb-4"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="stats-box">
+              <div class="stats-number">12+</div>
+              <p class="color">Years Experience</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title text-center">Our Portfolio</h2>
+            <p class="lead">
+              See how we've helped financial planners grow their practices
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="portfolio-item">
+              <img
+                src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                alt="Portfolio 1"
+              />
+              <div class="portfolio-overlay">
+                <div class="text-center text-white">
+                  <h4>Wealth Management Firm</h4>
+                  <p>Digital Marketing Campaign</p>
+                  <a href="#" class="btn btn-secondary mt-2">View Case Study</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="portfolio-item">
+              <img
+                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                alt="Portfolio 2"
+              />
+              <div class="portfolio-overlay">
+                <div class="text-center text-white">
+                  <h4>Retirement Planning Specialist</h4>
+                  <p>Website & Brand Development</p>
+                  <a href="#" class="btn btn-secondary mt-2">View Case Study</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="portfolio-item">
+              <img
+                src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                alt="Portfolio 3"
+              />
+              <div class="portfolio-overlay">
+                <div class="text-center text-white">
+                  <h4>Estate Planning Advisor</h4>
+                  <p>Content Marketing Strategy</p>
+                  <a href="#" class="btn btn-secondary mt-2">View Case Study</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="portfolio-item">
+              <img
+                src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                alt="Portfolio 4"
+              />
+              <div class="portfolio-overlay">
+                <div class="text-center text-white">
+                  <h4>Investment Advisory Practice</h4>
+                  <p>Lead Generation Campaign</p>
+                  <a href="#" class="btn btn-secondary mt-2">View Case Study</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <div class="portfolio-item">
+              <img
+                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                alt="Portfolio 5"
+              />
+              <div class="portfolio-overlay">
+                <div class="text-center text-white">
+                  <h4>Tax Planning Specialist</h4>
+                  <p>Social Media Marketing</p>
+                  <a href="#" class="btn btn-secondary mt-2">View Case Study</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <div class="portfolio-item">
+              <img
+                src="https://images.unsplash.com/photo-1591696205602-2f950c417dad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                alt="Portfolio 6"
+              />
+              <div class="portfolio-overlay">
+                <div class="text-center text-white">
+                  <h4>Financial Education Company</h4>
+                  <p>Comprehensive Marketing Strategy</p>
+                  <a href="#" class="btn btn-secondary mt-2">View Case Study</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-padding bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title text-center">Client Testimonials</h2>
+            <p class="lead">
+              What financial professionals say about our services
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="testimonial-card">
+              <div class="d-flex align-items-center mb-4">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80"
+                  class="client-image me-3"
+                  alt="Client"
+                />
+                <div>
+                  <h5 class="mb-0">Robert Johnson</h5>
+                  <p class="text-muted mb-0">CFP®, Financial Advisor</p>
+                </div>
+              </div>
+              <p class="mb-0">
+                "OneTechgen transformed my practice. Within 6 months, they
+                helped me increase qualified leads by 150%. Their understanding
+                of the financial industry sets them apart from other marketing
+                agencies."
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="testimonial-card">
+              <div class="d-flex align-items-center mb-4">
+                <img
+                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80"
+                  class="client-image me-3"
+                  alt="Client"
+                />
+                <div>
+                  <h5 class="mb-0">Sarah Williams</h5>
+                  <p class="text-muted mb-0">CFP®, Wealth Manager</p>
+                </div>
+              </div>
+              <p class="mb-0">
+                "The content marketing strategy developed by OneTechgen has
+                positioned me as an authority in retirement planning. I'm now
+                regularly approached by media outlets for commentary, which has
+                significantly boosted my credibility."
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="testimonial-card">
+              <div class="d-flex align-items-center mb-4">
+                <img
+                  src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80"
+                  class="client-image me-3"
+                  alt="Client"
+                />
+                <div>
+                  <h5 class="mb-0">Michael Chen</h5>
+                  <p class="text-muted mb-0">
+                    CFP®, Estate Planning Specialist
+                  </p>
+                </div>
+              </div>
+              <p class="mb-0">
+                "I was hesitant to invest in marketing, but OneTechgen proved
+                the ROI quickly. Their targeted approach brings me clients who
+                are genuinely interested in comprehensive estate planning
+                services."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title text-center">Our Team</h2>
+            <p class="lead">Experts in both marketing and financial services</p>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="team-member text-center">
+              <img
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                class="rounded-circle mb-3"
+                alt="Team Member"
+                width="200"
+                height="200"
+              />
+              <h4>David Wilson</h4>
+              <p class="text-primary">CEO & Founder</p>
+              <p>
+                Former financial advisor with 15+ years of industry experience
+              </p>
+              <div class="social-icons">
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fas fa-envelope"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="team-member text-center">
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                class="rounded-circle mb-3"
+                alt="Team Member"
+                width="200"
+                height="200"
+              />
+              <h4>Emily Rodriguez</h4>
+              <p class="text-primary">Marketing Director</p>
+              <p>Digital marketing expert specializing in financial services</p>
+              <div class="social-icons">
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fas fa-envelope"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="team-member text-center">
+              <img
+                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                class="rounded-circle mb-3"
+                alt="Team Member"
+                width="200"
+                height="200"
+              />
+              <h4>James Thompson</h4>
+              <p class="text-primary">Content Strategist</p>
+              <p>Former financial journalist with deep industry knowledge</p>
+              <div class="social-icons">
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fas fa-envelope"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="team-member text-center">
+              <img
+                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                class="rounded-circle mb-3"
+                alt="Team Member"
+                width="200"
+                height="200"
+              />
+              <h4>Sophia Kim</h4>
+              <p class="text-primary">SEO Specialist</p>
+              <p>Technical SEO expert with focus on financial compliance</p>
+              <div class="social-icons">
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#" class="social-icon"
+                  ><i class="fas fa-envelope"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section-padding bg-primary text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title text-center text-white">Our Process</h2>
+            <p class="lead">How we deliver results for financial planners</p>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="process-step text-center">
+              <div class="step-number">01</div>
+              <h4 class="my-3">Discovery</h4>
+              <p>We learn about your practice, target audience, and goals</p>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="process-step text-center">
+              <div class="step-number">02</div>
+              <h4 class="my-3">Strategy</h4>
+              <p>
+                We develop a customized marketing plan tailored to your needs
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="process-step text-center">
+              <div class="step-number">03</div>
+              <h4 class="my-3">Implementation</h4>
+              <p>
+                We execute the strategy with attention to compliance and detail
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="process-step text-center">
+              <div class="step-number">04</div>
+              <h4 class="my-3">Optimization</h4>
+              <p>
+                We continuously refine based on performance data and feedback
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title text-center">Pricing Plans</h2>
+            <p class="lead">Flexible options to fit your practice's needs</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card pricing-card border-0 text-center h-100">
+              <div class="card-header bg-light py-4">
+                <h4>Starter</h4>
+                <div class="price display-4 fw-bold">
+                  $997<span class="fs-6">/mo</span>
+                </div>
+                <p>For newer practices establishing their presence</p>
+              </div>
+              <div class="card-body py-4">
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Basic Website
+                    Optimization
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> 4 Blog Posts
+                    Monthly
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Social Media
+                    Management
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Monthly
+                    Performance Report
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-times text-danger me-2"></i> Paid
+                    Advertising
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-times text-danger me-2"></i> Email
+                    Marketing
+                  </li>
+                </ul>
+                <a href="#contact" class="btn btn-outline-primary"
+                  >Get Started</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card pricing-card border-0 text-center h-100 popular">
+              <div
+                class="card-header bg-primary text-white py-4 position-relative"
+              >
+                <span
+                  class="popular-badge position-absolute top-0 start-50 translate-middle px-3 py-1 bg-secondary text-dark"
+                  >Most Popular</span
+                >
+                <h4>Professional</h4>
+                <div class="price display-4 fw-bold">
+                  $2,497<span class="fs-6">/mo</span>
+                </div>
+                <p>For established practices looking to grow</p>
+              </div>
+              <div class="card-body py-4">
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Advanced
+                    Website Optimization
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> 8 Blog Posts
+                    Monthly
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Comprehensive
+                    Social Media
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Bi-weekly
+                    Performance Reports
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Targeted Paid
+                    Advertising
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Email
+                    Newsletter Campaigns
+                  </li>
+                </ul>
+                <a href="#contact" class="btn btn-primary">Get Started</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card pricing-card border-0 text-center h-100">
+              <div class="card-header bg-light py-4">
+                <h4>Enterprise</h4>
+                <div class="price display-4 fw-bold">
+                  $4,997<span class="fs-6">/mo</span>
+                </div>
+                <p>For large practices with complex needs</p>
+              </div>
+              <div class="card-body py-4">
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Complete
+                    Website Redesign
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> 12 Blog Posts
+                    Monthly
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Full Social
+                    Media Management
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Weekly
+                    Performance Reports
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Multi-channel
+                    Paid Advertising
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Advanced
+                    Email Marketing
+                  </li>
+                </ul>
+                <a href="#contact" class="btn btn-outline-primary"
+                  >Get Started</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section-padding bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title text-center">Latest Insights</h2>
+            <p class="lead">
+              Marketing tips and strategies for financial planners
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card blog-card border-0 h-100">
+              <img
+                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                class="card-img-top"
+                alt="Blog Post"
+              />
+              <div class="card-body">
+                <span class="d-inline-block text-primary mb-2"
+                  >Digital Marketing</span
+                >
+                <h4 class="card-title">
+                  5 SEO Strategies Every Financial Planner Should Implement
+                </h4>
+                <p class="card-text">
+                  Learn how to optimize your online presence to attract
+                  qualified leads searching for financial advice.
+                </p>
+                <a href="#" class="btn btn-link p-0"
+                  >Read More <i class="fas fa-arrow-right ms-2"></i
+                ></a>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <div class="d-flex align-items-center">
+                  <img
+                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80"
+                    class="rounded-circle me-2"
+                    width="30"
+                    height="30"
+                    alt="Author"
+                  />
+                  <span>David Wilson</span>
+                  <span class="ms-3"
+                    ><i class="far fa-clock me-1"></i> 5 min read</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card blog-card border-0 h-100">
+              <img
+                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                class="card-img-top"
+                alt="Blog Post"
+              />
+              <div class="card-body">
+                <span class="d-inline-block text-primary mb-2"
+                  >Content Marketing</span
+                >
+                <h4 class="card-title">
+                  How to Create Educational Content That Converts
+                </h4>
+                <p class="card-text">
+                  Discover the types of content that establish trust and drive
+                  potential clients to take action.
+                </p>
+                <a href="#" class="btn btn-link p-0"
+                  >Read More <i class="fas fa-arrow-right ms-2"></i
+                ></a>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <div class="d-flex align-items-center">
+                  <img
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80"
+                    class="rounded-circle me-2"
+                    width="30"
+                    height="30"
+                    alt="Author"
+                  />
+                  <span>Emily Rodriguez</span>
+                  <span class="ms-3"
+                    ><i class="far fa-clock me-1"></i> 7 min read</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card blog-card border-0 h-100">
+              <img
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                class="card-img-top"
+                alt="Blog Post"
+              />
+              <div class="card-body">
+                <span class="d-inline-block text-primary mb-2"
+                  >Lead Generation</span
+                >
+                <h4 class="card-title">
+                  The Ultimate Guide to Generating Qualified Financial Planning
+                  Leads
+                </h4>
+                <p class="card-text">
+                  Proven strategies to attract high-value clients who are ready
+                  to engage your services.
+                </p>
+                <a href="#" class="btn btn-link p-0"
+                  >Read More <i class="fas fa-arrow-right ms-2"></i
+                ></a>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <div class="d-flex align-items-center">
+                  <img
+                    src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80"
+                    class="rounded-circle me-2"
+                    width="30"
+                    height="30"
+                    alt="Author"
+                  />
+                  <span>James Thompson</span>
+                  <span class="ms-3"
+                    ><i class="far fa-clock me-1"></i> 10 min read</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title text-center">
+              Frequently Asked Questions
+            </h2>
+            <p class="lead">
+              Common questions about marketing for financial planners
+            </p>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="accordion" id="faqAccordion">
+              <div
+                class="accordion-item border-0 mb-3"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <h2 class="accordion-header" id="headingOne">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    How long does it take to see results from your marketing
+                    strategies?
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    While some strategies like paid advertising can generate
+                    leads within weeks, most organic strategies like SEO and
+                    content marketing take 3-6 months to show significant
+                    results. We focus on sustainable growth rather than quick
+                    fixes.
+                  </div>
+                </div>
+              </div>
+              <div
+                class="accordion-item border-0 mb-3"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <h2 class="accordion-header" id="headingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    Do you ensure compliance with financial industry
+                    regulations?
+                  </button>
+                </h2>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTwo"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Absolutely. Our team includes professionals with financial
+                    industry experience who understand compliance requirements.
+                    All content and strategies are developed with regulatory
+                    considerations in mind.
+                  </div>
+                </div>
+              </div>
+              <div
+                class="accordion-item border-0 mb-3"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <h2 class="accordion-header" id="headingThree">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    Can you work with CFPs in different specializations?
+                  </button>
+                </h2>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingThree"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Yes, we have experience working with CFPs specializing in
+                    retirement planning, estate planning, investment management,
+                    tax planning, and more. Our strategies are tailored to your
+                    specific niche and target audience.
+                  </div>
+                </div>
+              </div>
+              <div
+                class="accordion-item border-0 mb-3"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <h2 class="accordion-header" id="headingFour">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour"
+                    aria-expanded="false"
+                    aria-controls="collapseFour"
+                  >
+                    How do you measure the success of your marketing campaigns?
+                  </button>
+                </h2>
+                <div
+                  id="collapseFour"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFour"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    We track key performance indicators including website
+                    traffic, lead generation, conversion rates, and most
+                    importantly, client acquisition cost and ROI. You'll receive
+                    regular reports showing exactly how your investment is
+                    performing.
+                  </div>
+                </div>
+              </div>
+              <div
+                class="accordion-item border-0 mb-3"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                <h2 class="accordion-header" id="headingFive">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive"
+                    aria-expanded="false"
+                    aria-controls="collapseFive"
+                  >
+                    What makes your approach different from other marketing
+                    agencies?
+                  </button>
+                </h2>
+                <div
+                  id="collapseFive"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFive"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Our unique advantage is our deep understanding of the
+                    financial services industry. Unlike general marketing
+                    agencies, we speak your language, understand compliance
+                    requirements, and know how to connect with individuals
+                    seeking financial advice.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-8 mb-4 mb-lg-0" data-aos="fade-right">
+            <h2 class="mb-3">Ready to Grow Your Financial Practice?</h2>
+            <p class="lead mb-0">
+              Schedule a free consultation to discuss how we can help you
+              attract more qualified clients.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end" data-aos="fade-left">
+            <a href="#contact" class="btn btn-secondary btn-lg"
+              >Schedule Consultation</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title text-center">Contact Us</h2>
+            <p class="lead">Let's discuss how we can help grow your practice</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <form data-aos="fade-up" data-aos-delay="200">
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <label for="name" class="form-label">Your Name</label>
+                  <input type="text" class="form-control" id="name" required />
+                </div>
+                <div class="col-md-6 mb-4">
+                  <label for="email" class="form-label">Email Address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    required
+                  />
+                </div>
+                <div class="col-md-6 mb-4">
+                  <label for="phone" class="form-label">Phone Number</label>
+                  <input type="tel" class="form-control" id="phone" />
+                </div>
+                <div class="col-md-6 mb-4">
+                  <label for="company" class="form-label">Company Name</label>
+                  <input type="text" class="form-control" id="company" />
+                </div>
+                <div class="col-12 mb-4">
+                  <label for="message" class="form-label"
+                    >How Can We Help?</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    rows="5"
+                    required
+                  ></textarea>
+                </div>
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn btn-primary btn-lg">
+                    Send Message
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h4 class="text-white mb-4">OneTechgen</h4>
+            <p>
+              Specialized marketing solutions for Certified Financial Planners
+              looking to grow their practice and attract qualified clients.
+            </p>
+            <div class="social-icons mt-4">
+              <a href="#" class="social-icon"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <h5 class="text-white mb-4">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="#home">Home</a></li>
+              <li class="mb-2"><a href="#about">About</a></li>
+              <li class="mb-2"><a href="#services">Services</a></li>
+              <li class="mb-2"><a href="#portfolio">Portfolio</a></li>
+              <li class="mb-2"><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+            <h5 class="text-white mb-4">Services</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="#">Digital Marketing</a></li>
+              <li class="mb-2"><a href="#">Content Marketing</a></li>
+              <li class="mb-2"><a href="#">Website Development</a></li>
+              <li class="mb-2"><a href="#">Lead Generation</a></li>
+              <li class="mb-2"><a href="#">Brand Development</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-4">
+            <h5 class="text-white mb-4">Contact Info</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i class="fas fa-map-marker-alt me-2"></i> 123 Financial
+                District, San Francisco, CA 94105
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-phone me-2"></i> (555) 123-4567
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-envelope me-2"></i> info@onetechgen.com
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-clock me-2"></i> Mon-Fri: 9AM-5PM
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-5 bg-light" />
+        <div class="row">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <p class="mb-0">&copy; 2023 OneTechgen. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="#" class="me-3">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom Script -->
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+      });
+
+      // Navbar scroll effect
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 50) {
+          document.querySelector(".navbar").classList.add("scrolled");
+        } else {
+          document.querySelector(".navbar").classList.remove("scrolled");
+        }
+
+        // Back to top button
+        if (window.scrollY > 300) {
+          document.querySelector(".back-to-top").classList.add("active");
+        } else {
+          document.querySelector(".back-to-top").classList.remove("active");
+        }
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 70,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu when clicking a link
+            if (
+              document
+                .querySelector(".navbar-collapse")
+                .classList.contains("show")
+            ) {
+              document.querySelector(".navbar-toggler").click();
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
