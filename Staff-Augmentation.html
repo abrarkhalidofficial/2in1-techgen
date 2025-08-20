@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metas -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta
+      name="keywords"
+      content="staff augmentation, IT staffing, tech talent, remote developers, dedicated teams, hiring solutions"
+    />
+    <meta
+      name="description"
+      content="OneTechgen provides expert staff augmentation services to help businesses scale their teams with skilled IT professionals."
+    />
+    <meta name="author" content="OneTechgen" />
+
+    <!-- Title  -->
+    <title>Staff Augmentation Services | OneTechgen</title>
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="https://images.unsplash.com/photo-1563013546-73e4c9c5f4de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Core Style Css -->
+    <style>
+      :root {
+        --primary: #212529;
+        --secondary: #d4af37;
+        --accent: #3e92cc;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --success: #28a745;
+      }
+
+      body {
+        font-family: "Manrope", sans-serif;
+        color: var(--dark);
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--secondary);
+        border-color: var(--secondary);
+        color: var(--dark);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-secondary {
+        background-color: var(--secondary);
+        border-color: var(--secondary);
+        color: var(--dark);
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .btn-secondary:hover {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .section-padding {
+        padding: 100px 0;
+      }
+
+      .bg-light {
+        background-color: var(--light) !important;
+      }
+
+      .bg-primary {
+        background-color: var(--primary) !important;
+      }
+
+      .text-primary {
+        color: var(--primary) !important;
+      }
+
+      .text-secondary {
+        color: var(--secondary) !important;
+      }
+
+      .hero-section {
+        background: linear-gradient(
+            rgba(10, 36, 99, 0.8),
+            rgba(10, 36, 99, 0.8)
+          ),
+          url("https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80")
+            no-repeat center center/cover;
+        padding: 180px 0 120px;
+        color: white;
+      }
+
+      .navbar {
+        padding: 20px 0;
+        transition: all 0.3s ease;
+      }
+
+      .navbar.scrolled {
+        padding: 10px 0;
+        background-color: white !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar.scrolled .nav-link {
+        color: var(--dark) !important;
+      }
+
+      .navbar.scrolled .navbar-brand {
+        color: var(--primary) !important;
+      }
+
+      .service-card {
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        height: 100%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .stats-box {
+        text-align: center;
+        padding: 30px;
+        border-radius: 10px;
+        background: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .stats-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .stats-number {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 10px;
+      }
+
+      .process-step {
+        position: relative;
+        padding: 30px;
+        text-align: center;
+        border-radius: 10px;
+        background: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        height: 100%;
+      }
+
+      .step-number {
+        width: 60px;
+        height: 60px;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: 700;
+        margin: 0 auto 20px;
+      }
+
+      .role-card {
+        border-radius: 10px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        height: 100%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .role-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-control {
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid #e1e1e1;
+      }
+
+      .form-control:focus {
+        box-shadow: none;
+        border-color: var(--primary);
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .social-icon:hover {
+        background: var(--secondary);
+        color: var(--dark);
+        transform: translateY(-3px);
+      }
+
+      .footer {
+        background: var(--dark);
+        color: white;
+        padding: 80px 0 30px;
+      }
+
+      .footer a {
+        color: #ddd;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        color: var(--secondary);
+      }
+
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .back-to-top.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .back-to-top:hover {
+        background: var(--secondary);
+        color: var(--dark);
+      }
+
+      .section-title {
+        position: relative;
+        margin-bottom: 60px;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: var(--secondary);
+      }
+
+      .section-title.text-center:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .talent-card {
+        border-radius: 10px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        height: 100%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .talent-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .talent-image {
+        height: 200px;
+        object-fit: cover;
+        width: 100%;
+      }
+
+      .comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .comparison-table th,
+      .comparison-table td {
+        padding: 15px;
+        text-align: left;
+        border: 1px solid #e1e1e1;
+      }
+
+      .comparison-table th {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      .comparison-table tr:nth-child(even) {
+        background-color: #f8f9fa;
+      }
+
+      .check-icon {
+        color: var(--success);
+        font-size: 1.2rem;
+      }
+
+      .times-icon {
+        color: #dc3545;
+        font-size: 1.2rem;
+      }
+
+      @media (max-width: 768px) {
+        .hero-section {
+          padding: 120px 0 80px;
+        }
+
+        .section-padding {
+          padding: 60px 0;
+        }
+
+        .display-3 {
+          font-size: 2.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">OneTechgen</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="staff-augmentation.html"
+                >Staff Augmentation</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#portfolio">Case Studies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+            <h1 class="display-3 fw-bold mb-4">Staff Augmentation Services</h1>
+            <p class="lead mb-5">
+              Scale your team with skilled IT professionals tailored to your
+              specific needs and project requirements.
+            </p>
+            <div class="d-flex flex-wrap gap-3 justify-content-center">
+              <a href="#contact" class="btn btn-primary">Request Talent</a>
+              <a href="#process" class="btn btn-secondary">Our Process</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title text-center">
+              Why Choose Our Staff Augmentation
+            </h2>
+            <p class="lead">
+              Flexible staffing solutions that drive your business forward
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="service-card card h-100 border-0">
+              <div class="card-body p-4 text-center">
+                <div class="icon-box mb-4">
+                  <i class="fas fa-rocket fa-3x text-primary"></i>
+                </div>
+                <h4 class="mb-3">Faster Scaling</h4>
+                <p>
+                  Quickly scale your team up or down based on project
+                  requirements without the overhead of traditional hiring.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="service-card card h-100 border-0">
+              <div class="card-body p-4 text-center">
+                <div class="icon-box mb-4">
+                  <i class="fas fa-dollar-sign fa-3x text-primary"></i>
+                </div>
+                <h4 class="mb-3">Cost Efficiency</h4>
+                <p>
+                  Reduce recruitment costs, onboarding expenses, and overhead
+                  associated with full-time employees.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="service-card card h-100 border-0">
+              <div class="card-body p-4 text-center">
+                <div class="icon-box mb-4">
+                  <i class="fas fa-briefcase fa-3x text-primary"></i>
+                </div>
+                <h4 class="mb-3">Access to Expertise</h4>
+                <p>
+                  Tap into a global talent pool of pre-vetted professionals with
+                  specialized skills and experience.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="service-card card h-100 border-0">
+              <div class="card-body p-4 text-center">
+                <div class="icon-box mb-4">
+                  <i class="fas fa-sliders-h fa-3x text-primary"></i>
+                </div>
+                <h4 class="mb-3">Flexible Engagement</h4>
+                <p>
+                  Choose from hourly, part-time, full-time, or project-based
+                  engagements that suit your needs.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <div class="service-card card h-100 border-0">
+              <div class="card-body p-4 text-center">
+                <div class="icon-box mb-4">
+                  <i class="fas fa-shield-alt fa-3x text-primary"></i>
+                </div>
+                <h4 class="mb-3">Reduced Risk</h4>
+                <p>
+                  Minimize hiring risks with our rigorous vetting process and
+                  trial periods for all professionals.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <div class="service-card card h-100 border-0">
+              <div class="card-body p-4 text-center">
+                <div class="icon-box mb-4">
+                  <i class="fas fa-tachometer-alt fa-3x text-primary"></i>
+                </div>
+                <h4 class="mb-3">Faster Time-to-Market</h4>
+                <p>
+                  Accelerate project timelines by quickly adding skilled
+                  professionals to your team.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-5 bg-primary text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-6 text-center mb-4" data-aos="fade-up">
+            <div class="stats-box">
+              <div class="stats-number">500+</div>
+              <p>IT Professionals</p>
+            </div>
+          </div>
+          <div
+            class="col-md-3 col-6 text-center mb-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="stats-box">
+              <div class="stats-number">98%</div>
+              <p>Client Satisfaction</p>
+            </div>
+          </div>
+          <div
+            class="col-md-3 col-6 text-center mb-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="stats-box">
+              <div class="stats-number">24-72</div>
+              <p>Hours to Match</p>
+            </div>
+          </div>
+          <div
+            class="col-md-3 col-6 text-center mb-4"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="stats-box">
+              <div class="stats-number">15+</div>
+              <p>Technical Domains</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Talent Pool Section -->
+    <section class="section-padding bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title text-center">Our Talent Pool</h2>
+            <p class="lead">
+              Access skilled professionals across various technologies and
+              domains
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="role-card card h-100 border-0">
+              <img
+                src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                class="card-img-top talent-image"
+                alt="Web Development"
+              />
+              <div class="card-body text-center">
+                <h4 class="card-title">Web Developers</h4>
+                <p class="card-text">
+                  Frontend, backend, and full-stack developers proficient in
+                  modern frameworks and technologies.
+                </p>
+                <ul class="list-unstyled">
+                  <li>JavaScript, React, Angular</li>
+                  <li>Node.js, Python, PHP</li>
+                  <li>HTML5, CSS3, Sass</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="role-card card h-100 border-0">
+              <img
+                src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                class="card-img-top talent-image"
+                alt="Mobile Development"
+              />
+              <div class="card-body text-center">
+                <h4 class="card-title">Mobile Developers</h4>
+                <p class="card-text">
+                  iOS and Android developers creating responsive,
+                  high-performance mobile applications.
+                </p>
+                <ul class="list-unstyled">
+                  <li>Swift, Objective-C</li>
+                  <li>Kotlin, Java</li>
+                  <li>React Native, Flutter</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="role-card card h-100 border-0">
+              <img
+                src="https://images.unsplash.com/photo-1563207153-f403bf289096?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                class="card-img-top talent-image"
+                alt="UI/UX Design"
+              />
+              <div class="card-body text-center">
+                <h4 class="card-title">UI/UX Designers</h4>
+                <p class="card-text">
+                  Creative designers crafting intuitive user interfaces and
+                  engaging user experiences.
+                </p>
+                <ul class="list-unstyled">
+                  <li>Figma, Sketch, Adobe XD</li>
+                  <li>User Research</li>
+                  <li>Prototyping & Wireframing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="role-card card h-100 border-0">
+              <img
+                src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                class="card-img-top talent-image"
+                alt="Data Science"
+              />
+              <div class="card-body text-center">
+                <h4 class="card-title">Data Scientists</h4>
+                <p class="card-text">
+                  Analytics experts transforming data into actionable insights
+                  and predictive models.
+                </p>
+                <ul class="list-unstyled">
+                  <li>Python, R, SQL</li>
+                  <li>Machine Learning</li>
+                  <li>Data Visualization</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-12 text-center" data-aos="fade-up">
+            <a href="#contact" class="btn btn-primary">Explore All Roles</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title text-center">Our Process</h2>
+            <p class="lead">
+              Simple and efficient staffing solution implementation
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="process-step">
+              <div class="step-number">1</div>
+              <h4 class="my-3">Requirement Analysis</h4>
+              <p>
+                We thoroughly analyze your project requirements, team structure,
+                and skill gaps.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="process-step">
+              <div class="step-number">2</div>
+              <h4 class="my-3">Talent Matching</h4>
+              <p>
+                Our AI-powered platform matches your needs with the most
+                suitable professionals.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="process-step">
+              <div class="step-number">3</div>
+              <h4 class="my-3">Screening & Vetting</h4>
+              <p>
+                Rigorous technical assessments and interviews to ensure quality
+                and fit.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="process-step">
+              <div class="step-number">4</div>
+              <h4 class="my-3">Onboarding & Integration</h4>
+              <p>
+                Seamless integration of professionals into your team with full
+                support.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="section-padding bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title text-center">
+              Staff Augmentation vs Traditional Hiring
+            </h2>
+            <p class="lead">
+              Why businesses are choosing flexible staffing solutions
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12" data-aos="fade-up">
+            <div class="table-responsive">
+              <table class="comparison-table">
+                <thead>
+                  <tr>
+                    <th>Criteria</th>
+                    <th>Staff Augmentation</th>
+                    <th>Traditional Hiring</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Time to Hire</td>
+                    <td><i class="fas fa-check check-icon"></i> 1-3 days</td>
+                    <td><i class="fas fa-times times-icon"></i> 4-8 weeks</td>
+                  </tr>
+                  <tr>
+                    <td>Cost</td>
+                    <td>
+                      <i class="fas fa-check check-icon"></i> Lower overall cost
+                    </td>
+                    <td>
+                      <i class="fas fa-times times-icon"></i> Higher recruitment
+                      costs
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Flexibility</td>
+                    <td>
+                      <i class="fas fa-check check-icon"></i> Scale up/down
+                      easily
+                    </td>
+                    <td>
+                      <i class="fas fa-times times-icon"></i> Rigid team
+                      structure
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Access to Talent</td>
+                    <td>
+                      <i class="fas fa-check check-icon"></i> Global talent pool
+                    </td>
+                    <td>
+                      <i class="fas fa-times times-icon"></i> Limited to local
+                      market
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Management Overhead</td>
+                    <td>
+                      <i class="fas fa-check check-icon"></i> Minimal
+                      administrative work
+                    </td>
+                    <td>
+                      <i class="fas fa-times times-icon"></i> HR and management
+                      intensive
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Trial Period</td>
+                    <td>
+                      <i class="fas fa-check check-icon"></i> Risk-free trial
+                      available
+                    </td>
+                    <td>
+                      <i class="fas fa-times times-icon"></i> Difficult to
+                      assess fit
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engagement Models Section -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title text-center">Engagement Models</h2>
+            <p class="lead">Flexible options to meet your specific needs</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card card h-100 border-0 text-center">
+              <div class="card-header bg-light py-4">
+                <h4>Full-Time</h4>
+                <div class="price display-4 fw-bold">
+                  40<span class="fs-6">hrs/week</span>
+                </div>
+                <p>
+                  Dedicated professional working exclusively on your projects
+                </p>
+              </div>
+              <div class="card-body py-4">
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Complete
+                    integration with your team
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Long-term
+                    commitment
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Deep
+                    understanding of your business
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Weekly
+                    progress reporting
+                  </li>
+                </ul>
+                <a href="#contact" class="btn btn-outline-primary"
+                  >Get Started</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card card h-100 border-0 text-center popular">
+              <div
+                class="card-header bg-primary text-white py-4 position-relative"
+              >
+                <span
+                  class="popular-badge position-absolute top-0 start-50 translate-middle px-3 py-1 bg-secondary text-dark"
+                  >Most Popular</span
+                >
+                <h4>Part-Time</h4>
+                <div class="price display-4 fw-bold">
+                  20<span class="fs-6">hrs/week</span>
+                </div>
+                <p>Expert support for specific tasks or ongoing maintenance</p>
+              </div>
+              <div class="card-body py-4">
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i>
+                    Cost-effective solution
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Flexible
+                    scheduling
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Specialized
+                    skills when needed
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Perfect for
+                    ongoing projects
+                  </li>
+                </ul>
+                <a href="#contact" class="btn btn-primary">Get Started</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card card h-100 border-0 text-center">
+              <div class="card-header bg-light py-4">
+                <h4>Hourly</h4>
+                <div class="price display-4 fw-bold">
+                  $45-95<span class="fs-6">/hour</span>
+                </div>
+                <p>Pay only for the actual time spent on your project</p>
+              </div>
+              <div class="card-body py-4">
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Maximum
+                    flexibility
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Perfect for
+                    short-term tasks
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> No long-term
+                    commitment
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i> Detailed time
+                    tracking
+                  </li>
+                </ul>
+                <a href="#contact" class="btn btn-outline-primary"
+                  >Get Started</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-8 mb-4 mb-lg-0" data-aos="fade-right">
+            <h2 class="mb-3">Ready to Scale Your Team?</h2>
+            <p class="lead mb-0">
+              Get matched with pre-vetted professionals in 24 hours.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end" data-aos="fade-left">
+            <a href="#contact" class="btn btn-secondary btn-lg"
+              >Request Talent</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-padding bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title text-center">
+              Frequently Asked Questions
+            </h2>
+            <p class="lead">
+              Everything you need to know about staff augmentation
+            </p>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="accordion" id="faqAccordion">
+              <div
+                class="accordion-item border-0 mb-3"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <h2 class="accordion-header" id="headingOne">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    How quickly can you provide a suitable candidate?
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    We typically present suitable candidates within 24-72 hours
+                    after understanding your requirements. Our extensive talent
+                    pool and AI-powered matching system allow us to quickly
+                    identify professionals who meet your specific needs.
+                  </div>
+                </div>
+              </div>
+              <div
+                class="accordion-item border-0 mb-3"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <h2 class="accordion-header" id="headingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    What is your vetting process for professionals?
+                  </button>
+                </h2>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTwo"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Our vetting process includes technical assessments,
+                    portfolio reviews, background checks, and multiple interview
+                    rounds. We evaluate both technical skills and soft skills to
+                    ensure a good cultural fit with your organization.
+                  </div>
+                </div>
+              </div>
+              <div
+                class="accordion-item border-0 mb-3"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <h2 class="accordion-header" id="headingThree">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    Can I interview candidates before engagement?
+                  </button>
+                </h2>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingThree"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Absolutely. We encourage our clients to interview candidates
+                    to ensure they meet your expectations. We facilitate the
+                    interview process and provide our recommendations based on
+                    your specific requirements.
+                  </div>
+                </div>
+              </div>
+              <div
+                class="accordion-item border-0 mb-3"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <h2 class="accordion-header" id="headingFour">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour"
+                    aria-expanded="false"
+                    aria-controls="collapseFour"
+                  >
+                    What if I'm not satisfied with a professional?
+                  </button>
+                </h2>
+                <div
+                  id="collapseFour"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFour"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    We offer a risk-free trial period for all engagements. If
+                    you're not satisfied with a professional during the trial
+                    period, we'll replace them at no additional cost. Our goal
+                    is to ensure complete satisfaction with our services.
+                  </div>
+                </div>
+              </div>
+              <div
+                class="accordion-item border-0 mb-3"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                <h2 class="accordion-header" id="headingFive">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive"
+                    aria-expanded="false"
+                    aria-controls="collapseFive"
+                  >
+                    How do you handle confidentiality and security?
+                  </button>
+                </h2>
+                <div
+                  id="collapseFive"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFive"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    We take confidentiality seriously. All professionals sign
+                    comprehensive NDAs before engagement. We also comply with
+                    data protection regulations and can implement additional
+                    security measures based on your requirements.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title text-center">Get Started Today</h2>
+            <p class="lead">Tell us about your staffing needs</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <form data-aos="fade-up" data-aos-delay="200">
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <label for="name" class="form-label">Your Name</label>
+                  <input type="text" class="form-control" id="name" required />
+                </div>
+                <div class="col-md-6 mb-4">
+                  <label for="email" class="form-label">Email Address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    required
+                  />
+                </div>
+                <div class="col-md-6 mb-4">
+                  <label for="company" class="form-label">Company Name</label>
+                  <input type="text" class="form-control" id="company" />
+                </div>
+                <div class="col-md-6 mb-4">
+                  <label for="role" class="form-label">Role Needed</label>
+                  <select class="form-select" id="role">
+                    <option selected>Select a role...</option>
+                    <option>Web Developer</option>
+                    <option>Mobile Developer</option>
+                    <option>UI/UX Designer</option>
+                    <option>Data Scientist</option>
+                    <option>DevOps Engineer</option>
+                    <option>Project Manager</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <label for="duration" class="form-label"
+                    >Expected Duration</label
+                  >
+                  <select class="form-select" id="duration">
+                    <option selected>Select duration...</option>
+                    <option>Less than 1 month</option>
+                    <option>1-3 months</option>
+                    <option>3-6 months</option>
+                    <option>6-12 months</option>
+                    <option>More than 1 year</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <label for="engagement" class="form-label"
+                    >Engagement Model</label
+                  >
+                  <select class="form-select" id="engagement">
+                    <option selected>Select model...</option>
+                    <option>Full-Time</option>
+                    <option>Part-Time</option>
+                    <option>Hourly</option>
+                  </select>
+                </div>
+                <div class="col-12 mb-4">
+                  <label for="requirements" class="form-label"
+                    >Project Requirements</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="requirements"
+                    rows="5"
+                    required
+                  ></textarea>
+                </div>
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn btn-primary btn-lg">
+                    Submit Request
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h4 class="text-white mb-4">OneTechgen</h4>
+            <p>
+              Specialized staff augmentation services to help businesses scale
+              their teams with skilled IT professionals.
+            </p>
+            <div class="social-icons mt-4">
+              <a href="#" class="social-icon"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <h5 class="text-white mb-4">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="index.html">Home</a></li>
+              <li class="mb-2"><a href="index.html#about">About</a></li>
+              <li class="mb-2"><a href="index.html#services">Services</a></li>
+              <li class="mb-2">
+                <a href="staff-augmentation.html">Staff Augmentation</a>
+              </li>
+              <li class="mb-2"><a href="index.html#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+            <h5 class="text-white mb-4">Services</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="#">Web Development</a></li>
+              <li class="mb-2"><a href="#">Mobile Development</a></li>
+              <li class="mb-2"><a href="#">UI/UX Design</a></li>
+              <li class="mb-2"><a href="#">Data Science</a></li>
+              <li class="mb-2"><a href="#">DevOps</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-4">
+            <h5 class="text-white mb-4">Contact Info</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i class="fas fa-map-marker-alt me-2"></i> 123 Tech Avenue, San
+                Francisco, CA 94105
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-phone me-2"></i> (555) 123-4567
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-envelope me-2"></i> staffing@onetechgen.com
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-clock me-2"></i> Mon-Fri: 9AM-5PM
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-5 bg-light" />
+        <div class="row">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <p class="mb-0">&copy; 2023 OneTechgen. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="#" class="me-3">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom Script -->
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+      });
+
+      // Navbar scroll effect
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 50) {
+          document.querySelector(".navbar").classList.add("scrolled");
+        } else {
+          document.querySelector(".navbar").classList.remove("scrolled");
+        }
+
+        // Back to top button
+        if (window.scrollY > 300) {
+          document.querySelector(".back-to-top").classList.add("active");
+        } else {
+          document.querySelector(".back-to-top").classList.remove("active");
+        }
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 70,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu when clicking a link
+            if (
+              document
+                .querySelector(".navbar-collapse")
+                .classList.contains("show")
+            ) {
+              document.querySelector(".navbar-toggler").click();
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
