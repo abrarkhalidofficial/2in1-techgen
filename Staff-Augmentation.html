@@ -100,7 +100,17 @@
         transform: translateY(-3px);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       }
-
+      .main-title {
+        font-family: "Syne", sans-serif;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+        animation: titleSlide 1.8s ease-out;
+      }
+      .stroke-text {
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+        -webkit-text-fill-color: transparent;
+      }
       .btn-secondary {
         background-color: var(--secondary);
         border-color: var(--secondary);
@@ -134,16 +144,16 @@
       .text-primary {
         color: var(--primary) !important;
       }
+      .color {
+        color: var(--primary);
+      }
 
       .text-secondary {
         color: var(--secondary) !important;
       }
 
       .hero-section {
-        background: linear-gradient(
-            rgba(10, 36, 99, 0.8),
-            rgba(10, 36, 99, 0.8)
-          ),
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
           url("https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80")
             no-repeat center center/cover;
         padding: 180px 0 120px;
@@ -457,7 +467,9 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
-            <h1 class="display-3 fw-bold mb-4">Staff Augmentation Services</h1>
+            <h1 class="display-3 fw-bold mb-4 main-title">
+              Staff Augmentation <br /><span class="stroke-text">Services</span>
+            </h1>
             <p class="lead mb-5">
               Scale your team with skilled IT professionals tailored to your
               specific needs and project requirements.
@@ -604,7 +616,7 @@
           <div class="col-md-3 col-6 text-center mb-4" data-aos="fade-up">
             <div class="stats-box">
               <div class="stats-number">500+</div>
-              <p>IT Professionals</p>
+              <p class="color">IT Professionals</p>
             </div>
           </div>
           <div
@@ -614,7 +626,7 @@
           >
             <div class="stats-box">
               <div class="stats-number">98%</div>
-              <p>Client Satisfaction</p>
+              <p class="color">Client Satisfaction</p>
             </div>
           </div>
           <div
@@ -624,7 +636,7 @@
           >
             <div class="stats-box">
               <div class="stats-number">24-72</div>
-              <p>Hours to Match</p>
+              <p class="color">Hours to Match</p>
             </div>
           </div>
           <div
@@ -634,7 +646,7 @@
           >
             <div class="stats-box">
               <div class="stats-number">15+</div>
-              <p>Technical Domains</p>
+              <p class="color">Technical Domains</p>
             </div>
           </div>
         </div>
