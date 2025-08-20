@@ -10,6 +10,14 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Syne:wght@700;800&family=Manrope:wght@400;600&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <style>
       * {
@@ -269,10 +277,138 @@
           flex-direction: column;
           align-items: center;
         }
+        .content {
+          margin-top: 12em;
+        }
+        .navbar {
+          background-color: var(--light);
+          color: var(--dark);
+        }
+      }
+      :root {
+        --primary: #0a2463;
+        --secondary: #d4af37;
+        --dark: #212529;
+        --light: #ffffff;
+      }
+
+      .navbar {
+        background-color: #212529;
+        color: #ffffff;
+        padding: 15px 0;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar.scrolled {
+        background-color: var(--dark);
+        padding: 10px 0;
+      }
+
+      .navbar.scrolled .nav-link {
+        color: var(--light) !important;
+      }
+
+      .navbar.scrolled .navbar-brand {
+        color: var(--light) !important;
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        color: var(--light);
+        font-size: 1.5rem;
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: var(--light);
+        margin: 0 10px;
+        transition: all 0.3s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--secondary) !important;
+      }
+
+      .navbar-toggler {
+        border: none;
+        outline: none;
+        background-color: var(--light);
+      }
+
+      .navbar-toggler:focus {
+        box-shadow: none;
+      }
+
+      /* Demo content */
+      .demo-content {
+        height: 120vh;
+        padding: 20px;
+      }
+
+      .content-section {
+        margin-bottom: 40px;
       }
     </style>
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">OneTechgen</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="staff-augmentation.html"
+                >Staff Augmentation</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="marketing-cfps.html"
+                >Marketing for CFPs</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Services
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Web Development</a></li>
+                <li><a class="dropdown-item" href="#">Digital Marketing</a></li>
+                <li><a class="dropdown-item" href="#">UI/UX Design</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Consultation</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <section class="hero-section">
       <div class="particles">
         <div class="particle"></div>
@@ -316,5 +452,16 @@
         </div>
       </div>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Navbar scroll effect
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 50) {
+          document.querySelector(".navbar").classList.add("scrolled");
+        } else {
+          document.querySelector(".navbar").classList.remove("scrolled");
+        }
+      });
+    </script>
   </body>
 </html>
