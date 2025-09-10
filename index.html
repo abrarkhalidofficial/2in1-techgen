@@ -338,8 +338,6 @@
       }
 
       .navbar-toggler {
-        border: none;
-        outline: none;
         background-color: var(--light);
       }
 
@@ -361,7 +359,9 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="index.html">OneTechgen</a>
+        <a href="index.html">
+          <img src="/images//logo.png" alt="OneTechgen" style="height: 40px" />
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -371,7 +371,10 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span
+            class="navbar-toggler-icon"
+            style="height: 1em !important; width: 1em !important"
+          ></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
@@ -388,27 +391,9 @@
                 >Marketing for CFPs</a
               >
             </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Services
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Web Development</a></li>
-                <li><a class="dropdown-item" href="#">Digital Marketing</a></li>
-                <li><a class="dropdown-item" href="#">UI/UX Design</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">Consultation</a></li>
-              </ul>
-            </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
+              <a class="nav-link" href="/contact.html">Contact</a>
             </li>
           </ul>
         </div>
