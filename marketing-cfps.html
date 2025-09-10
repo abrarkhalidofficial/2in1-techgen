@@ -159,28 +159,22 @@
         padding: 180px 0 120px;
         color: white;
       }
-      .nav-item {
-        color: var(--light) !important;
-      }
       .navbar {
-        padding: 20px 0;
+        background: linear-gradient(
+          135deg,
+          #0a0a0a 0%,
+          #1a1a1a 50%,
+          #0f0f0f 100%
+        );
+        color: #ffffff;
+        padding: 15px 0;
         transition: all 0.3s ease;
-        color: var(--light) !important;
-      }
-      .navbar-brand {
-        color: var(--light) !important;
-      }
-      .navbar-nav {
-        color: var(--light) !important;
-      }
-      .navbar-nav .nav-link {
-        color: var(--light) !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       }
 
       .navbar.scrolled {
+        background-color: var(--dark);
         padding: 10px 0;
-        background-color: var(--primary) !important;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       }
 
       .navbar.scrolled .nav-link {
@@ -189,6 +183,42 @@
 
       .navbar.scrolled .navbar-brand {
         color: var(--light) !important;
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        color: var(--light);
+        font-size: 1.5rem;
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: var(--light);
+        margin: 0 10px;
+        transition: all 0.3s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--secondary) !important;
+      }
+
+      .navbar-toggler {
+        background-color: var(--light);
+      }
+
+      .navbar-toggler:focus {
+        box-shadow: none;
+      }
+
+      /* Demo content */
+      .demo-content {
+        height: 120vh;
+        padding: 20px;
+      }
+
+      .content-section {
+        margin-bottom: 40px;
       }
 
       .service-card {
@@ -398,6 +428,144 @@
           font-size: 2.5rem;
         }
       }
+      .Schedule__callContainer {
+        max-width: 1200px;
+        margin: 40px auto;
+        background: linear-gradient(to right, #ffffff, #f8f9fa);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .Schedule__callHeader {
+        background: linear-gradient(135deg, #212529 0%, #1e293b 100%);
+        color: white;
+        padding: 40px;
+        text-align: center;
+      }
+
+      .Schedule__callTitle {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+
+      .Schedule__callSubtitle {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .Schedule__callContent {
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 500px;
+      }
+
+      .Schedule__callInfo {
+        flex: 1;
+        min-width: 300px;
+        padding: 40px;
+        background: white;
+      }
+
+      .Schedule__callBenefits {
+        margin-bottom: 30px;
+      }
+
+      .Schedule__callBenefitsTitle {
+        font-size: 1.5rem;
+        color: #1e293b;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+
+      .Schedule__callBenefit {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .Schedule__callBenefitIcon {
+        background: #1e293b;
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        flex-shrink: 0;
+      }
+
+      .Schedule__callCalendly {
+        flex: 1.5;
+        min-width: 400px;
+        position: relative;
+        background: #f8f9fa;
+      }
+
+      .Schedule__callCalendlyContainer {
+        position: relative;
+        overflow: hidden;
+        padding-top: 65%; /* Adjusted ratio for better visibility */
+        height: 100%;
+      }
+
+      .Schedule__callIframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .Schedule__callFooter {
+        background: #1e293b;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 900px) {
+        .Schedule__callContent {
+          flex-direction: column;
+        }
+
+        .Schedule__callInfo,
+        .Schedule__callCalendly {
+          min-width: 100%;
+        }
+
+        .Schedule__callCalendly {
+          min-height: 500px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .Schedule__callHeader {
+          padding: 30px 20px;
+        }
+
+        .Schedule__callTitle {
+          font-size: 2rem;
+        }
+
+        .Schedule__callSubtitle {
+          font-size: 1rem;
+        }
+
+        .Schedule__callInfo {
+          padding: 30px 20px;
+        }
+        .Schedule__callCalendlyContainer {
+          padding-top: 100%; /* Further adjust for smaller screens */
+        }
+      }
     </style>
   </head>
 
@@ -410,7 +578,9 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="#">OneTechgen</a>
+        <a href="index.html">
+          <img src="/images/logo.png" alt="OneTechgen" style="height: 40px" />
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -419,8 +589,12 @@
           aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          style="color: white !important; border-color: white !important"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span
+            class="navbar-toggler-icon"
+            style="height: 1em !important; width: 1em !important"
+          ></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
@@ -438,15 +612,6 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#testimonials">Testimonials</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#team">Team</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#pricing">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#blog">Blog</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#faq">FAQ</a>
@@ -1253,59 +1418,114 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center mb-5" data-aos="fade-up">
-            <h2 class="section-title text-center">Contact Us</h2>
-            <p class="lead">Let's discuss how we can help grow your practice</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <form data-aos="fade-up" data-aos-delay="200">
-              <div class="row">
-                <div class="col-md-6 mb-4">
-                  <label for="name" class="form-label">Your Name</label>
-                  <input type="text" class="form-control" id="name" required />
-                </div>
-                <div class="col-md-6 mb-4">
-                  <label for="email" class="form-label">Email Address</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    required
-                  />
-                </div>
-                <div class="col-md-6 mb-4">
-                  <label for="phone" class="form-label">Phone Number</label>
-                  <input type="tel" class="form-control" id="phone" />
-                </div>
-                <div class="col-md-6 mb-4">
-                  <label for="company" class="form-label">Company Name</label>
-                  <input type="text" class="form-control" id="company" />
-                </div>
-                <div class="col-12 mb-4">
-                  <label for="message" class="form-label"
-                    >How Can We Help?</label
-                  >
-                  <textarea
-                    class="form-control"
-                    id="message"
-                    rows="5"
-                    required
-                  ></textarea>
-                </div>
-                <div class="col-12 text-center">
-                  <button type="submit" class="btn btn-primary btn-lg">
-                    Send Message
-                  </button>
-                </div>
+    <section id="contact" class="Schedule__callContainer">
+      <div class="Schedule__callHeader">
+        <h1 class="Schedule__callTitle">Schedule Your Growth Strategy Call</h1>
+        <p class="Schedule__callSubtitle">
+          Book a free consultation with our experts to discuss growth strategies
+          for your business
+        </p>
+      </div>
+
+      <div class="Schedule__callContent">
+        <div class="Schedule__callInfo">
+          <div class="Schedule__callBenefits">
+            <h2 class="Schedule__callBenefitsTitle">Why Schedule a Call?</h2>
+
+            <div class="Schedule__callBenefit">
+              <div class="Schedule__callBenefitIcon">
+                <i class="fas fa-chart-line"></i>
               </div>
-            </form>
+              <div>
+                <h3>Growth Strategy</h3>
+                <p>Get personalized advice for scaling your business</p>
+              </div>
+            </div>
+
+            <div class="Schedule__callBenefit">
+              <div class="Schedule__callBenefitIcon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div>
+                <h3>15-Minute Sessions</h3>
+                <p>Quick but impactful conversations</p>
+              </div>
+            </div>
+
+            <div class="Schedule__callBenefit">
+              <div class="Schedule__callBenefitIcon">
+                <i class="fas fa-user-tie"></i>
+              </div>
+              <div>
+                <h3>Expert Advice</h3>
+                <p>Our specialists have helped 100+ businesses</p>
+              </div>
+            </div>
+
+            <div class="Schedule__callBenefit">
+              <div class="Schedule__callBenefitIcon">
+                <i class="fas fa-calendar-alt"></i>
+              </div>
+              <div>
+                <h3>Flexible Scheduling</h3>
+                <p>Book at a time that works for you</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="Schedule__callBenefits">
+            <h2 class="Schedule__callBenefitsTitle">What to Expect</h2>
+            <ul style="list-style: none">
+              <li class="Schedule__callBenefit">
+                <i
+                  class="fas fa-check-circle"
+                  style="color: #1e293b; margin-right: 10px"
+                ></i>
+                Personalized growth assessment
+              </li>
+              <li class="Schedule__callBenefit">
+                <i
+                  class="fas fa-check-circle"
+                  style="color: #1e293b; margin-right: 10px"
+                ></i>
+                Actionable insights
+              </li>
+              <li class="Schedule__callBenefit">
+                <i
+                  class="fas fa-check-circle"
+                  style="color: #1e293b; margin-right: 10px"
+                ></i>
+                No obligation consultation
+              </li>
+              <li class="Schedule__callBenefit">
+                <i
+                  class="fas fa-check-circle"
+                  style="color: #1e293b; margin-right: 10px"
+                ></i>
+                Follow-up resources
+              </li>
+            </ul>
           </div>
         </div>
+
+        <div class="Schedule__callCalendly">
+          <div class="Schedule__callCalendlyContainer">
+            <!-- Calendly inline widget begin -->
+            <iframe
+              class="Schedule__callIframe"
+              src="https://calendly.com/onetechgen/growthcall?hide_event_type_details=1&hide_gdpr_banner=1&background_color=f8f9fa&text_color=333333"
+              frameborder="0"
+            ></iframe>
+            <!-- Calendly inline widget end -->
+          </div>
+        </div>
+      </div>
+
+      <div class="Schedule__callFooter">
+        <p>
+          © 2025 Growth Strategy Calls. All rights reserved. Your information is
+          secure and will not be shared.
+        </p>
       </div>
     </section>
     <!-- FAQ Section -->
