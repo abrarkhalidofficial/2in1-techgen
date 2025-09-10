@@ -14,7 +14,7 @@
     />
     <style>
       :root {
-        --primary: #0a2463;
+        --primary: #212529;
         --secondary: #d4af37;
         --accent: #3e92cc;
         --light: #f8f9fa;
@@ -36,6 +36,72 @@
       h6 {
         font-family: "Syne", sans-serif;
         font-weight: 700;
+      }
+      .footer {
+        background: var(--dark);
+        color: white;
+        padding: 80px 0 30px;
+      }
+
+      .footer a {
+        color: #ddd;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        color: var(--secondary);
+      }
+      .navbar {
+        background: linear-gradient(
+          135deg,
+          #0a0a0a 0%,
+          #1a1a1a 50%,
+          #0f0f0f 100%
+        );
+        color: #ffffff;
+        padding: 15px 0;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar.scrolled {
+        background-color: var(--dark);
+        padding: 10px 0;
+      }
+
+      .navbar.scrolled .nav-link {
+        color: var(--light) !important;
+      }
+
+      .navbar.scrolled .navbar-brand {
+        color: var(--light) !important;
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        color: var(--light);
+        font-size: 1.5rem;
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: var(--light);
+        margin: 0 10px;
+        transition: all 0.3s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--secondary) !important;
+      }
+
+      .navbar-toggler {
+        background-color: var(--light);
+      }
+
+      .navbar-toggler:focus {
+        box-shadow: none;
       }
 
       .section-padding {
@@ -60,6 +126,7 @@
 
       .clients-section {
         padding: 60px 0;
+        margin-top: 4em;
         background-color: white;
       }
 
@@ -168,6 +235,48 @@
     </style>
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a href="index.html">
+          <img src="/images//logo.png" alt="OneTechgen" style="height: 40px" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span
+            class="navbar-toggler-icon"
+            style="height: 1em !important; width: 1em !important"
+          ></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="staff-augmentation.html"
+                >Staff Augmentation</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="marketing-cfps.html"
+                >Marketing for CFPs</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <!-- Clients Logo Section -->
     <section class="clients-section">
       <div class="container">
@@ -185,43 +294,43 @@
               class="d-flex flex-wrap justify-content-center align-items-center"
             >
               <img
-                src="https://via.placeholder.com/200x80/0a2463/ffffff?text=TechCorp"
-                alt="TechCorp"
+                src="/images/client1.png"
+                alt="Client 1"
                 class="client-logo"
               />
               <img
-                src="https://via.placeholder.com/200x80/0a2463/ffffff?text=InnovateX"
-                alt="InnovateX"
+                src="/images/client2.png"
+                alt="Client 2"
                 class="client-logo"
               />
               <img
-                src="https://via.placeholder.com/200x80/0a2463/ffffff?text=DataSolutions"
-                alt="DataSolutions"
+                src="/images/client3.png"
+                alt="Client 3"
                 class="client-logo"
               />
               <img
-                src="https://via.placeholder.com/200x80/0a2463/ffffff?text=CloudWorks"
-                alt="CloudWorks"
+                src="/images/client4.png"
+                alt="Client 4"
                 class="client-logo"
               />
               <img
-                src="https://via.placeholder.com/200x80/0a2463/ffffff?text=SecureNet"
-                alt="SecureNet"
+                src="/images/client5.png"
+                alt="Client 5"
                 class="client-logo"
               />
               <img
-                src="https://via.placeholder.com/200x80/0a2463/ffffff?text=FutureTech"
-                alt="FutureTech"
+                src="/images/client6.png"
+                alt="Client 6"
                 class="client-logo"
               />
               <img
-                src="https://via.placeholder.com/200x80/0a2463/ffffff?text=DigitalPlus"
-                alt="DigitalPlus"
+                src="/images/client7.png"
+                alt="Client 7"
                 class="client-logo"
               />
               <img
-                src="https://via.placeholder.com/200x80/0a2463/ffffff?text=AppGenius"
-                alt="AppGenius"
+                src="/images/client8.png"
+                alt="Client 8"
                 class="client-logo"
               />
             </div>
@@ -232,159 +341,6 @@
 
     <!-- Contact Us Page -->
     <div class="contact-page">
-      <!-- Hero Section -->
-      <section class="contact-hero">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto text-center">
-              <h1 class="display-4 fw-bold mb-4">Get In Touch With Us</h1>
-              <p class="lead mb-5">
-                We're here to answer your questions and discuss how our services
-                can help your business grow.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact Methods Section -->
-      <section class="section-padding">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 text-center mb-5">
-              <h2>Contact Methods</h2>
-              <p class="lead">Choose your preferred way to connect with us</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="contact-card card h-100 border-0 text-center">
-                <div class="card-body p-4">
-                  <div class="contact-icon">
-                    <i class="fas fa-phone"></i>
-                  </div>
-                  <h4 class="mb-3">Phone</h4>
-                  <p class="mb-2">Speak directly with our team</p>
-                  <h5 class="text-primary">+1 (555) 123-4567</h5>
-                  <p class="text-muted mt-3">Mon-Fri: 9AM-6PM EST</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="contact-card card h-100 border-0 text-center">
-                <div class="card-body p-4">
-                  <div class="contact-icon">
-                    <i class="fas fa-envelope"></i>
-                  </div>
-                  <h4 class="mb-3">Email</h4>
-                  <p class="mb-2">Send us a message anytime</p>
-                  <h5 class="text-primary">info@onetechgen.com</h5>
-                  <p class="text-muted mt-3">We respond within 24 hours</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="contact-card card h-100 border-0 text-center">
-                <div class="card-body p-4">
-                  <div class="contact-icon">
-                    <i class="fas fa-comments"></i>
-                  </div>
-                  <h4 class="mb-3">Live Chat</h4>
-                  <p class="mb-2">Instant messaging support</p>
-                  <h5 class="text-primary">Start Chat</h5>
-                  <p class="text-muted mt-3">
-                    Available 24/7 for urgent inquiries
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact Form Section -->
-      <section class="section-padding bg-light">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <div class="card border-0 shadow">
-                <div class="card-body p-5">
-                  <div class="text-center mb-5">
-                    <h2>Send Us a Message</h2>
-                    <p class="lead">
-                      Fill out the form below and we'll get back to you shortly
-                    </p>
-                  </div>
-                  <form>
-                    <div class="row">
-                      <div class="col-md-6 mb-4">
-                        <label for="name" class="form-label">Full Name *</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="name"
-                          required
-                        />
-                      </div>
-                      <div class="col-md-6 mb-4">
-                        <label for="email" class="form-label"
-                          >Email Address *</label
-                        >
-                        <input
-                          type="email"
-                          class="form-control"
-                          id="email"
-                          required
-                        />
-                      </div>
-                      <div class="col-md-6 mb-4">
-                        <label for="company" class="form-label"
-                          >Company Name</label
-                        >
-                        <input type="text" class="form-control" id="company" />
-                      </div>
-                      <div class="col-md-6 mb-4">
-                        <label for="phone" class="form-label"
-                          >Phone Number</label
-                        >
-                        <input type="tel" class="form-control" id="phone" />
-                      </div>
-                      <div class="col-12 mb-4">
-                        <label for="subject" class="form-label"
-                          >Subject *</label
-                        >
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="subject"
-                          required
-                        />
-                      </div>
-                      <div class="col-12 mb-4">
-                        <label for="message" class="form-label"
-                          >Message *</label
-                        >
-                        <textarea
-                          class="form-control"
-                          id="message"
-                          rows="5"
-                          required
-                        ></textarea>
-                      </div>
-                      <div class="col-12 text-center">
-                        <button type="submit" class="btn btn-primary btn-lg">
-                          Send Message
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- Office Locations Section -->
       <section class="section-padding">
         <div class="container">
@@ -456,133 +412,93 @@
           </div>
         </div>
       </section>
-
-      <!-- FAQ Section -->
-      <section class="section-padding bg-light">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 text-center mb-5">
-              <h2>Frequently Asked Questions</h2>
-              <p class="lead">
-                Find answers to common questions about our services
-              </p>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h4 class="text-white mb-4">OneTechgen</h4>
+            <p>
+              Specialized staff augmentation services to help businesses scale
+              their teams with skilled IT professionals.
+            </p>
+            <div class="social-icons mt-4">
+              <a href="#" class="social-icon"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
             </div>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <div class="accordion" id="faqAccordion">
-                <div class="faq-item">
-                  <h5 class="mb-0">
-                    <button
-                      class="btn btn-link w-100 text-start text-decoration-none text-dark fw-bold"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq1"
-                      aria-expanded="true"
-                      aria-controls="faq1"
-                    >
-                      How quickly do you respond to inquiries?
-                    </button>
-                  </h5>
-                  <div
-                    id="faq1"
-                    class="collapse show"
-                    data-bs-parent="#faqAccordion"
-                  >
-                    <div class="pt-3">
-                      We typically respond to all inquiries within 24 hours
-                      during business days. For urgent matters, we recommend
-                      using our live chat feature or calling us directly.
-                    </div>
-                  </div>
-                </div>
-                <div class="faq-item">
-                  <h5 class="mb-0">
-                    <button
-                      class="btn btn-link w-100 text-start text-decoration-none text-dark fw-bold collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq2"
-                      aria-expanded="false"
-                      aria-controls="faq2"
-                    >
-                      What industries do you specialize in?
-                    </button>
-                  </h5>
-                  <div
-                    id="faq2"
-                    class="collapse"
-                    data-bs-parent="#faqAccordion"
-                  >
-                    <div class="pt-3">
-                      We have experience across multiple industries including
-                      technology, finance, healthcare, e-commerce, education,
-                      and more. Our team adapts to the specific needs of each
-                      industry we serve.
-                    </div>
-                  </div>
-                </div>
-                <div class="faq-item">
-                  <h5 class="mb-0">
-                    <button
-                      class="btn btn-link w-100 text-start text-decoration-none text-dark fw-bold collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq3"
-                      aria-expanded="false"
-                      aria-controls="faq3"
-                    >
-                      Do you offer custom solutions?
-                    </button>
-                  </h5>
-                  <div
-                    id="faq3"
-                    class="collapse"
-                    data-bs-parent="#faqAccordion"
-                  >
-                    <div class="pt-3">
-                      Yes, we specialize in creating custom solutions tailored
-                      to your specific business needs. During our consultation
-                      process, we'll work with you to understand your
-                      requirements and develop a solution that addresses your
-                      unique challenges.
-                    </div>
-                  </div>
-                </div>
-                <div class="faq-item">
-                  <h5 class="mb-0">
-                    <button
-                      class="btn btn-link w-100 text-start text-decoration-none text-dark fw-bold collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq4"
-                      aria-expanded="false"
-                      aria-controls="faq4"
-                    >
-                      What are your business hours?
-                    </button>
-                  </h5>
-                  <div
-                    id="faq4"
-                    class="collapse"
-                    data-bs-parent="#faqAccordion"
-                  >
-                    <div class="pt-3">
-                      Our main offices are open from 9AM to 6PM local time,
-                      Monday through Friday. However, our support team is
-                      available 24/7 for urgent matters, and we have team
-                      members in different time zones to accommodate global
-                      clients.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <h5 class="text-white mb-4">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="">Home</a></li>
+              <li class="mb-2"><a href="#about">About</a></li>
+              <li class="mb-2"><a href="#services">Services</a></li>
+              <li class="mb-2">
+                <a href="staff-augmentation.html">Staff Augmentation</a>
+              </li>
+              <li class="mb-2"><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+            <h5 class="text-white mb-4">Services</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="#">Web Development</a></li>
+              <li class="mb-2"><a href="#">Mobile Development</a></li>
+              <li class="mb-2"><a href="#">UI/UX Design</a></li>
+              <li class="mb-2"><a href="#">Data Science</a></li>
+              <li class="mb-2"><a href="#">DevOps</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-4">
+            <h5 class="text-white mb-4">Contact Info</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i class="fas fa-map-marker-alt me-2"></i> 123 Tech Avenue, San
+                Francisco, CA 94105
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-phone me-2"></i> (555) 123-4567
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-envelope me-2"></i> staffing@onetechgen.com
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-clock me-2"></i> Mon-Fri: 9AM-5PM
+              </li>
+            </ul>
           </div>
         </div>
-      </section>
-    </div>
-
+        <hr class="my-5 bg-light" />
+        <div class="row">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <p class="mb-0">&copy; 2023 OneTechgen. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="#" class="me-3">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Navbar scroll effect
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 50) {
+          document.querySelector(".navbar").classList.add("scrolled");
+        } else {
+          document.querySelector(".navbar").classList.remove("scrolled");
+        }
+      });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
